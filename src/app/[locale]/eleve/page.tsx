@@ -1,16 +1,16 @@
 import { getTranslations } from "next-intl/server";
 import { DashboardShell } from "@/components/dashboard/dashboard-shell";
-import { requireUser } from "@/modules/auth/require-user";
+import { requireAppUser } from "@/modules/auth/require-app-user";
 
 export default async function EleveDashboardPage() {
-  await requireUser();
+  const appUser = await requireAppUser("eleve");
   const t = await getTranslations("dashboard.eleve");
 
   return (
     <DashboardShell
       badge="Élève"
       title={t("title")}
-      welcome={t("welcome")}
+      welcome={appUser ? `${t("welcome")} ${appUser.fullName}` : t("welcome")}
       cards={[
         { title: t("subscription.title"), description: t("subscription.description") },
         { title: t("courses.title"), description: t("courses.description") },

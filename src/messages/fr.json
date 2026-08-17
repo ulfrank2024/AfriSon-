@@ -98,6 +98,16 @@
     "success": "Candidature envoyée ! Nous te recontactons rapidement.",
     "error": "Une erreur est survenue, réessaie dans un instant."
   },
+  "onboarding": {
+    "title": "Finalise ton profil",
+    "description": "Encore une étape avant d'accéder à ton espace élève.",
+    "fields": {
+      "fullName": "Nom complet",
+      "country": "Pays"
+    },
+    "submit": "Continuer",
+    "error": "Une erreur est survenue, réessaie dans un instant."
+  },
   "dashboard": {
     "eleve": {
       "title": "Espace élève",

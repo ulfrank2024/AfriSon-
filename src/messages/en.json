@@ -98,6 +98,16 @@
     "success": "Application sent! We'll be in touch soon.",
     "error": "Something went wrong, please try again shortly."
   },
+  "onboarding": {
+    "title": "Finish setting up your profile",
+    "description": "One more step before you reach your student space.",
+    "fields": {
+      "fullName": "Full name",
+      "country": "Country"
+    },
+    "submit": "Continue",
+    "error": "Something went wrong, please try again shortly."
+  },
   "dashboard": {
     "eleve": {
       "title": "Student space",

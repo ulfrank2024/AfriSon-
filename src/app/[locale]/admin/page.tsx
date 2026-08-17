@@ -1,16 +1,16 @@
 import { getTranslations } from "next-intl/server";
 import { DashboardShell } from "@/components/dashboard/dashboard-shell";
-import { requireUser } from "@/modules/auth/require-user";
+import { requireAppUser } from "@/modules/auth/require-app-user";
 
 export default async function AdminDashboardPage() {
-  await requireUser();
+  const appUser = await requireAppUser("admin");
   const t = await getTranslations("dashboard.admin");
 
   return (
     <DashboardShell
       badge="Admin"
       title={t("title")}
-      welcome={t("welcome")}
+      welcome={appUser ? `${t("welcome")} ${appUser.fullName}` : t("welcome")}
       cards={[
         { title: t("overview.title"), description: t("overview.description") },
         { title: t("applications.title"), description: t("applications.description") },
