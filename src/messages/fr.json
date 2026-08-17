@@ -75,6 +75,57 @@
     "seminars": { "title": "Séminaires panafricains", "description": "Masterclasses et rencontres entre élèves et enseignants de tout le continent." },
     "churches": { "title": "Partenariats avec les églises", "description": "Formation des équipes musicales et techniques des communautés partenaires." }
   },
+  "eventsPromo": {
+    "eyebrow": "Événements",
+    "title": "Bientôt : concerts, séminaires et rencontres panafricaines",
+    "description": "Des scènes pour jouer, des masterclasses pour progresser, des rencontres entre élèves et enseignants de tout le continent. Le calendrier s'ouvre avec les premières promotions.",
+    "cta": "Être informé des prochains événements",
+    "pageDescription": "Aucun événement n'est encore programmé publiquement : les premiers concerts et séminaires seront annoncés ici dès que le calendrier s'ouvrira, avec les villes et dates concernées.",
+    "typeConcerts": { "title": "Concerts", "description": "Des scènes locales aux grands rendez-vous panafricains." },
+    "typeSeminars": { "title": "Séminaires", "description": "Masterclasses et ateliers avec des enseignants du continent." }
+  },
+  "blog": {
+    "eyebrow": "Le mag",
+    "title": "Conseils, coulisses et actualités",
+    "description": "De quoi progresser entre deux cours et suivre la vie de la communauté AfriSon Academy.",
+    "readMore": "Lire l'article",
+    "cta": "Voir tous les articles",
+    "backToBlog": "Retour aux articles",
+    "pageTitle": "Le blog AfriSon Academy",
+    "pageDescription": "Conseils de pratique, coulisses de l'ingénierie du son et actualités de la communauté.",
+    "posts": {
+      "practice": {
+        "title": "5 habitudes pour progresser plus vite sur ton instrument",
+        "excerpt": "Un peu chaque jour vaut mieux qu'un marathon le dimanche. Voici comment structurer une pratique efficace, même avec 15 minutes devant toi.",
+        "date": "12 mars 2026",
+        "body": [
+          "La régularité bat l'intensité : 15 minutes chaque jour font plus progresser qu'une session de deux heures une fois par semaine. Le cerveau consolide un geste technique pendant le sommeil qui suit la pratique — répartir ses séances, c'est multiplier les nuits de consolidation.",
+          "Découpe chaque séance en trois temps courts : un échauffement technique, un travail ciblé sur un point précis (un passage difficile, un rythme), puis un moment de plaisir où tu rejoues ce que tu maîtrises déjà. C'est ce dernier temps qui donne envie de revenir le lendemain.",
+          "Enfin, enregistre-toi une fois par semaine. On progresse plus vite quand on s'entend vraiment jouer, pas seulement quand on se sent jouer."
+        ]
+      },
+      "sound": {
+        "title": "Ingénierie du son : par où commencer quand on débute ?",
+        "excerpt": "Prise de son, mixage, mastering : un tour d'horizon pour comprendre le métier et choisir sa spécialisation.",
+        "date": "2 mars 2026",
+        "body": [
+          "L'ingénierie du son couvre en réalité plusieurs métiers distincts : la prise de son (capter un instrument ou une voix dans les meilleures conditions), le mixage (équilibrer et sculpter les pistes entre elles) et le mastering (finaliser le rendu global d'un morceau). Beaucoup de débutants essaient de tout apprendre en même temps — mieux vaut choisir une porte d'entrée.",
+          "Si tu aimes le concret et le terrain, commence par la prise de son : elle t'apprend à écouter avant de manipuler. Si tu préfères composer et arranger, le mixage sera plus naturel. Le mastering vient presque toujours en dernier, une fois que l'oreille est déjà exercée.",
+          "Le matériel ne fait pas tout : une bonne écoute critique, développée avec un casque ou des enceintes que tu connais par cœur, compte davantage qu'une console de mixage haut de gamme au démarrage."
+        ]
+      },
+      "heritage": {
+        "title": "Pourquoi transmettre les instruments traditionnels africains compte",
+        "excerpt": "Kora, djembé, balafon : le patrimoine musical africain se transmet aussi en ligne. Rencontre avec des enseignants engagés.",
+        "date": "18 février 2026",
+        "body": [
+          "Pendant des siècles, ces instruments se sont transmis presque exclusivement en présentiel, souvent au sein d'une même famille ou communauté. Cette transmission orale est précieuse, mais elle limite aussi le nombre de personnes qui peuvent apprendre, surtout loin des zones où ces savoir-faire sont encore vivants.",
+          "Les cours en ligne ne remplacent pas cette transmission directe, mais ils ouvrent une porte supplémentaire : un élève à Yaoundé peut apprendre le balafon avec un enseignant du Mali, un autre en diaspora peut renouer avec un instrument que sa famille ne joue plus depuis deux générations.",
+          "C'est tout l'enjeu de la section instruments traditionnels d'AfriSon Academy : donner aux enseignants les moyens de transmettre au-delà de leur seul cercle géographique, sans dénaturer ce qu'ils enseignent."
+        ]
+      }
+    }
+  },
   "teacherRecruitment": {
     "title": "Deviens enseignant sur AfriSon Academy",
     "description": "Partage ton savoir-faire, touche des élèves partout en Afrique et au-delà, et sois rémunéré équitablement.",

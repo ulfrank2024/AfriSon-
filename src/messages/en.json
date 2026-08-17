@@ -75,6 +75,57 @@
     "seminars": { "title": "Pan-African seminars", "description": "Masterclasses and meetups between students and teachers from across the continent." },
     "churches": { "title": "Church partnerships", "description": "Training music and technical teams for partner communities." }
   },
+  "eventsPromo": {
+    "eyebrow": "Events",
+    "title": "Coming soon: concerts, seminars, and pan-African meetups",
+    "description": "Stages to perform on, masterclasses to grow, and meetups between students and teachers from across the continent. The calendar opens with our first cohorts.",
+    "cta": "Get notified about upcoming events",
+    "pageDescription": "No event is publicly scheduled yet: the first concerts and seminars will be announced here once the calendar opens, with cities and dates.",
+    "typeConcerts": { "title": "Concerts", "description": "From local stages to bigger pan-African gatherings." },
+    "typeSeminars": { "title": "Seminars", "description": "Masterclasses and workshops with teachers from across the continent." }
+  },
+  "blog": {
+    "eyebrow": "The mag",
+    "title": "Tips, behind the scenes, and news",
+    "description": "Something to help you improve between lessons and follow the AfriSon Academy community.",
+    "readMore": "Read the article",
+    "cta": "See all articles",
+    "backToBlog": "Back to articles",
+    "pageTitle": "The AfriSon Academy blog",
+    "pageDescription": "Practice tips, a look behind sound engineering, and community news.",
+    "posts": {
+      "practice": {
+        "title": "5 habits to progress faster on your instrument",
+        "excerpt": "A little every day beats a marathon on Sunday. Here's how to structure effective practice, even with just 15 minutes.",
+        "date": "March 12, 2026",
+        "body": [
+          "Consistency beats intensity: 15 minutes every day moves you further than a two-hour session once a week. The brain consolidates a technical gesture during the sleep that follows practice — spreading sessions out means more nights of consolidation.",
+          "Split each session into three short parts: a technical warm-up, focused work on one specific point (a tricky passage, a rhythm), then a moment of pure enjoyment replaying what you already master. That last part is what makes you want to come back tomorrow.",
+          "Finally, record yourself once a week. You improve faster when you actually hear yourself play, not just how you feel while playing."
+        ]
+      },
+      "sound": {
+        "title": "Sound engineering: where do you even start?",
+        "excerpt": "Recording, mixing, mastering: an overview to understand the craft and choose your specialization.",
+        "date": "March 2, 2026",
+        "body": [
+          "Sound engineering actually covers several distinct crafts: recording (capturing an instrument or voice under the best conditions), mixing (balancing and shaping tracks together), and mastering (finalizing a track's overall sound). Many beginners try to learn everything at once — it's better to pick one entry point.",
+          "If you like hands-on, in-the-room work, start with recording: it trains you to listen before you manipulate. If you prefer composing and arranging, mixing will feel more natural. Mastering almost always comes last, once your ear is already trained.",
+          "Gear isn't everything: critical listening, developed on headphones or speakers you know inside out, matters more than a high-end mixing console when you're starting out."
+        ]
+      },
+      "heritage": {
+        "title": "Why passing on traditional African instruments matters",
+        "excerpt": "Kora, djembe, balafon: Africa's musical heritage is being passed on online too. Meet the teachers behind it.",
+        "date": "February 18, 2026",
+        "body": [
+          "For centuries, these instruments were passed on almost exclusively in person, often within the same family or community. That oral transmission is precious, but it also limits how many people can learn, especially far from where these skills are still practiced daily.",
+          "Online lessons don't replace that direct transmission, but they open an extra door: a student in Yaoundé can learn balafon from a teacher in Mali; someone in the diaspora can reconnect with an instrument their family hasn't played in two generations.",
+          "That's the whole point of AfriSon Academy's traditional instruments section: giving teachers the means to pass on their craft beyond their own geographic circle, without distorting what they teach."
+        ]
+      }
+    }
+  },
   "teacherRecruitment": {
     "title": "Become a teacher on AfriSon Academy",
     "description": "Share your expertise, reach students across Africa and beyond, and get paid fairly.",
