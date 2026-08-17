@@ -39,15 +39,18 @@
     "title": "A catalog built for Africa",
     "traditional": {
       "title": "Traditional African instruments",
-      "description": "Organized by region, to preserve and pass on the continent's musical heritage."
+      "description": "Organized by region, to preserve and pass on the continent's musical heritage.",
+      "examples": ["Kora", "Djembe", "Balafon", "Ngoni", "Mbira"]
     },
     "modern": {
       "title": "Modern instruments",
-      "description": "Piano, guitar, saxophone, drums."
+      "description": "The classics, taught by experienced teachers.",
+      "examples": ["Piano", "Guitar", "Saxophone", "Drums"]
     },
     "sound": {
       "title": "Sound engineering",
-      "description": "Technical training to become a sound engineer."
+      "description": "Technical training to become a sound engineer.",
+      "examples": ["Recording", "Mixing", "Mastering", "Home studio"]
     }
   },
   "howItWorks": {
@@ -61,7 +64,10 @@
   },
   "community": {
     "title": "Rooted in the field",
-    "description": "Concerts, pan-African seminars, and church partnerships to bring music to life beyond the screen."
+    "description": "Concerts, pan-African seminars, and church partnerships to bring music to life beyond the screen.",
+    "concerts": { "title": "Concerts", "description": "Stages to perform for a real audience, from campus shows to bigger concerts." },
+    "seminars": { "title": "Pan-African seminars", "description": "Masterclasses and meetups between students and teachers from across the continent." },
+    "churches": { "title": "Church partnerships", "description": "Training music and technical teams for partner communities." }
   },
   "teacherRecruitment": {
     "title": "Become a teacher on AfriSon Academy",

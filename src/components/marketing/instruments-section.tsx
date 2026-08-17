@@ -4,7 +4,9 @@ import {
   CardHeader,
   CardTitle,
   CardDescription,
+  CardContent,
 } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Reveal } from "@/components/motion/reveal";
 import { StaggerGroup, StaggerItem } from "@/components/motion/stagger-group";
 
@@ -29,11 +31,18 @@ export function InstrumentsSection() {
         <StaggerGroup className="mt-12 grid gap-6 sm:grid-cols-3">
           {CATEGORIES.map((category) => (
             <StaggerItem key={category}>
-              <Card>
+              <Card className="h-full">
                 <CardHeader>
                   <CardTitle>{t(`${category}.title`)}</CardTitle>
                   <CardDescription>{t(`${category}.description`)}</CardDescription>
                 </CardHeader>
+                <CardContent className="flex flex-wrap gap-2">
+                  {t.raw(`${category}.examples`).map((example: string) => (
+                    <Badge key={example} variant="secondary">
+                      {example}
+                    </Badge>
+                  ))}
+                </CardContent>
               </Card>
             </StaggerItem>
           ))}

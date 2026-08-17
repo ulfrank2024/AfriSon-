@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { buttonVariants } from "@/components/ui/button";
 import { LocaleSwitcher } from "./locale-switcher";
+import { LogoMark } from "./logo-mark";
 import { Reveal } from "@/components/motion/reveal";
 
 export function SiteHeader() {
@@ -10,7 +11,8 @@ export function SiteHeader() {
   return (
     <Reveal onView={false} y={-8} className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur">
       <header className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-        <Link href="/" className="text-lg font-bold tracking-tight">
+        <Link href="/" className="flex items-center gap-2 text-lg font-bold tracking-tight">
+          <LogoMark />
           AfriSon Academy
         </Link>
 

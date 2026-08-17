@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Separator } from "@/components/ui/separator";
+import { LogoMark } from "./logo-mark";
 
 export function SiteFooter() {
   const t = useTranslations("footer");
@@ -11,7 +12,10 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl px-4 py-12">
         <div className="grid gap-8 sm:grid-cols-3">
           <div>
-            <p className="text-lg font-bold">AfriSon Academy</p>
+            <p className="flex items-center gap-2 text-lg font-bold">
+              <LogoMark />
+              AfriSon Academy
+            </p>
             <p className="mt-2 text-sm text-muted-foreground">{t("tagline")}</p>
           </div>
 
