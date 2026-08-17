@@ -77,10 +77,12 @@
   "footer": {
     "tagline": "Pan-African platform for music learning and sound engineering.",
     "navigation": "Navigation",
+    "account": "Account",
     "contact": "Contact",
     "legal": "Legal notice",
     "login": "Log in",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "madeIn": "Built in Cameroon, for Africa."
   },
   "auth": {
     "unavailableTitle": "Sign-in coming soon",

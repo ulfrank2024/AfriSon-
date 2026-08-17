@@ -77,10 +77,12 @@
   "footer": {
     "tagline": "Plateforme panafricaine d'apprentissage musical et d'ingénierie du son.",
     "navigation": "Navigation",
+    "account": "Compte",
     "contact": "Contact",
     "legal": "Mentions légales",
     "login": "Se connecter",
-    "rights": "Tous droits réservés."
+    "rights": "Tous droits réservés.",
+    "madeIn": "Conçu au Cameroun, pour l'Afrique."
   },
   "auth": {
     "unavailableTitle": "Connexion bientôt disponible",
