@@ -1,0 +1,79 @@
+{
+  "nav": {
+    "concept": "Le concept",
+    "instruments": "Instruments",
+    "howItWorks": "Comment ça marche",
+    "becomeTeacher": "Devenir enseignant",
+    "login": "Se connecter",
+    "signup": "Créer un compte"
+  },
+  "hero": {
+    "eyebrow": "Apprentissage musical panafricain",
+    "title": "Apprends la musique et l'ingénierie du son, où que tu sois en Afrique",
+    "subtitle": "Instruments traditionnels africains, instruments modernes et formation à l'ingénierie du son, avec des enseignants qui parlent ta langue.",
+    "ctaStudent": "Je veux apprendre",
+    "ctaTeacher": "Je veux enseigner",
+    "stats": {
+      "students": "Élèves actifs",
+      "teachers": "Enseignants",
+      "countries": "Pays couverts",
+      "instruments": "Instruments enseignés"
+    }
+  },
+  "concept": {
+    "title": "Trois espaces, un seul objectif",
+    "student": {
+      "title": "Espace élève",
+      "description": "Choisis ton parcours, apprends à ton rythme avec des cours vidéo et du live, suis ta progression."
+    },
+    "teacher": {
+      "title": "Espace enseignant",
+      "description": "Crée tes cours, anime des sessions en direct, suis tes élèves et tes revenus."
+    },
+    "promoter": {
+      "title": "Espace promoteur",
+      "description": "Pilote la plateforme, valide les enseignants, organise les événements et suis la croissance."
+    }
+  },
+  "instruments": {
+    "title": "Un catalogue pensé pour l'Afrique",
+    "traditional": {
+      "title": "Instruments traditionnels africains",
+      "description": "Par région, pour préserver et transmettre le patrimoine musical du continent."
+    },
+    "modern": {
+      "title": "Instruments modernes",
+      "description": "Piano, guitare, saxophone, batterie."
+    },
+    "sound": {
+      "title": "Ingénierie du son",
+      "description": "Formation technique pour devenir ingénieur du son."
+    }
+  },
+  "howItWorks": {
+    "title": "Comment ça marche",
+    "steps": {
+      "signup": { "title": "Inscription", "description": "Crée ton compte élève en quelques minutes." },
+      "plan": { "title": "Choix de la formule", "description": "Sélectionne l'abonnement adapté à ton parcours." },
+      "learn": { "title": "Apprentissage", "description": "Suis tes cours vidéo, fais tes exercices, réserve du live." },
+      "stage": { "title": "Opportunités scène", "description": "Candidate aux concerts et événements de la communauté." }
+    }
+  },
+  "community": {
+    "title": "Ancrés sur le terrain",
+    "description": "Concerts, séminaires panafricains et partenariats avec les églises pour faire vivre la musique au-delà de l'écran."
+  },
+  "teacherRecruitment": {
+    "title": "Deviens enseignant sur AfriSon Academy",
+    "description": "Partage ton savoir-faire, touche des élèves partout en Afrique et au-delà, et sois rémunéré équitablement.",
+    "cta": "Devenir enseignant"
+  },
+  "footer": {
+    "tagline": "Plateforme panafricaine d'apprentissage musical et d'ingénierie du son.",
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "legal": "Mentions légales",
+    "login": "Se connecter",
+    "rights": "Tous droits réservés."
+  }
+}

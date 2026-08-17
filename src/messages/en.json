@@ -1,0 +1,79 @@
+{
+  "nav": {
+    "concept": "The concept",
+    "instruments": "Instruments",
+    "howItWorks": "How it works",
+    "becomeTeacher": "Become a teacher",
+    "login": "Log in",
+    "signup": "Create an account"
+  },
+  "hero": {
+    "eyebrow": "Pan-African music learning",
+    "title": "Learn music and sound engineering, wherever you are in Africa",
+    "subtitle": "Traditional African instruments, modern instruments, and sound engineering training, with teachers who speak your language.",
+    "ctaStudent": "I want to learn",
+    "ctaTeacher": "I want to teach",
+    "stats": {
+      "students": "Active students",
+      "teachers": "Teachers",
+      "countries": "Countries covered",
+      "instruments": "Instruments taught"
+    }
+  },
+  "concept": {
+    "title": "Three spaces, one goal",
+    "student": {
+      "title": "Student space",
+      "description": "Choose your path, learn at your own pace with video lessons and live sessions, track your progress."
+    },
+    "teacher": {
+      "title": "Teacher space",
+      "description": "Create your courses, host live sessions, track your students and your earnings."
+    },
+    "promoter": {
+      "title": "Promoter space",
+      "description": "Run the platform, approve teachers, organize events, and track growth."
+    }
+  },
+  "instruments": {
+    "title": "A catalog built for Africa",
+    "traditional": {
+      "title": "Traditional African instruments",
+      "description": "Organized by region, to preserve and pass on the continent's musical heritage."
+    },
+    "modern": {
+      "title": "Modern instruments",
+      "description": "Piano, guitar, saxophone, drums."
+    },
+    "sound": {
+      "title": "Sound engineering",
+      "description": "Technical training to become a sound engineer."
+    }
+  },
+  "howItWorks": {
+    "title": "How it works",
+    "steps": {
+      "signup": { "title": "Sign up", "description": "Create your student account in a few minutes." },
+      "plan": { "title": "Choose a plan", "description": "Pick the subscription that fits your path." },
+      "learn": { "title": "Learn", "description": "Follow video lessons, do exercises, book live sessions." },
+      "stage": { "title": "Stage opportunities", "description": "Apply for concerts and community events." }
+    }
+  },
+  "community": {
+    "title": "Rooted in the field",
+    "description": "Concerts, pan-African seminars, and church partnerships to bring music to life beyond the screen."
+  },
+  "teacherRecruitment": {
+    "title": "Become a teacher on AfriSon Academy",
+    "description": "Share your expertise, reach students across Africa and beyond, and get paid fairly.",
+    "cta": "Become a teacher"
+  },
+  "footer": {
+    "tagline": "Pan-African platform for music learning and sound engineering.",
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "legal": "Legal notice",
+    "login": "Log in",
+    "rights": "All rights reserved."
+  }
+}
