@@ -1,18 +1,20 @@
 import { useTranslations } from "next-intl";
+import { GraduationCap, Presentation, LayoutDashboard } from "lucide-react";
 import {
   Card,
   CardHeader,
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
+import { IconBadge } from "./icon-badge";
 import { Reveal } from "@/components/motion/reveal";
 import { StaggerGroup, StaggerItem } from "@/components/motion/stagger-group";
 
-const SPACES: Array<"student" | "teacher" | "promoter"> = [
-  "student",
-  "teacher",
-  "promoter",
-];
+const SPACES = [
+  { key: "student", icon: GraduationCap },
+  { key: "teacher", icon: Presentation },
+  { key: "promoter", icon: LayoutDashboard },
+] as const;
 
 export function ConceptSection() {
   const t = useTranslations("concept");
@@ -27,11 +29,12 @@ export function ConceptSection() {
 
       <StaggerGroup className="mt-12 grid gap-6 sm:grid-cols-3">
         {SPACES.map((space) => (
-          <StaggerItem key={space}>
+          <StaggerItem key={space.key}>
             <Card>
               <CardHeader>
-                <CardTitle>{t(`${space}.title`)}</CardTitle>
-                <CardDescription>{t(`${space}.description`)}</CardDescription>
+                <IconBadge icon={space.icon} className="mb-2" />
+                <CardTitle>{t(`${space.key}.title`)}</CardTitle>
+                <CardDescription>{t(`${space.key}.description`)}</CardDescription>
               </CardHeader>
             </Card>
           </StaggerItem>

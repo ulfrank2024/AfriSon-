@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import { Drum, Guitar, SlidersHorizontal } from "lucide-react";
 import {
   Card,
   CardHeader,
@@ -7,14 +8,15 @@ import {
   CardContent,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { IconBadge } from "./icon-badge";
 import { Reveal } from "@/components/motion/reveal";
 import { StaggerGroup, StaggerItem } from "@/components/motion/stagger-group";
 
-const CATEGORIES: Array<"traditional" | "modern" | "sound"> = [
-  "traditional",
-  "modern",
-  "sound",
-];
+const CATEGORIES = [
+  { key: "traditional", icon: Drum },
+  { key: "modern", icon: Guitar },
+  { key: "sound", icon: SlidersHorizontal },
+] as const;
 
 export function InstrumentsSection() {
   const t = useTranslations("instruments");
@@ -30,14 +32,15 @@ export function InstrumentsSection() {
 
         <StaggerGroup className="mt-12 grid gap-6 sm:grid-cols-3">
           {CATEGORIES.map((category) => (
-            <StaggerItem key={category}>
+            <StaggerItem key={category.key}>
               <Card className="h-full">
                 <CardHeader>
-                  <CardTitle>{t(`${category}.title`)}</CardTitle>
-                  <CardDescription>{t(`${category}.description`)}</CardDescription>
+                  <IconBadge icon={category.icon} className="mb-2" />
+                  <CardTitle>{t(`${category.key}.title`)}</CardTitle>
+                  <CardDescription>{t(`${category.key}.description`)}</CardDescription>
                 </CardHeader>
                 <CardContent className="flex flex-wrap gap-2">
-                  {t.raw(`${category}.examples`).map((example: string) => (
+                  {t.raw(`${category.key}.examples`).map((example: string) => (
                     <Badge key={example} variant="secondary">
                       {example}
                     </Badge>

@@ -18,6 +18,12 @@
       "teachers": "Enseignants",
       "countries": "Pays couverts",
       "instruments": "Instruments enseignés"
+    },
+    "visual": {
+      "live": "Session en direct",
+      "instrument": "Piano · Niveau intermédiaire",
+      "progress": "Progression du module",
+      "community": "40+ enseignants actifs"
     }
   },
   "concept": {

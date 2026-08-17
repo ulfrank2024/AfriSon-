@@ -1,18 +1,20 @@
 import { useTranslations } from "next-intl";
+import { Mic2, Users, Church } from "lucide-react";
 import {
   Card,
   CardHeader,
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
+import { IconBadge } from "./icon-badge";
 import { Reveal } from "@/components/motion/reveal";
 import { StaggerGroup, StaggerItem } from "@/components/motion/stagger-group";
 
-const ITEMS: Array<"concerts" | "seminars" | "churches"> = [
-  "concerts",
-  "seminars",
-  "churches",
-];
+const ITEMS = [
+  { key: "concerts", icon: Mic2 },
+  { key: "seminars", icon: Users },
+  { key: "churches", icon: Church },
+] as const;
 
 export function CommunitySection() {
   const t = useTranslations("community");
@@ -27,11 +29,12 @@ export function CommunitySection() {
 
         <StaggerGroup className="mt-12 grid gap-6 sm:grid-cols-3">
           {ITEMS.map((item) => (
-            <StaggerItem key={item}>
+            <StaggerItem key={item.key}>
               <Card>
                 <CardHeader>
-                  <CardTitle>{t(`${item}.title`)}</CardTitle>
-                  <CardDescription>{t(`${item}.description`)}</CardDescription>
+                  <IconBadge icon={item.icon} className="mb-2" />
+                  <CardTitle>{t(`${item.key}.title`)}</CardTitle>
+                  <CardDescription>{t(`${item.key}.description`)}</CardDescription>
                 </CardHeader>
               </Card>
             </StaggerItem>

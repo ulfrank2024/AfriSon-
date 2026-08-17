@@ -18,6 +18,12 @@
       "teachers": "Teachers",
       "countries": "Countries covered",
       "instruments": "Instruments taught"
+    },
+    "visual": {
+      "live": "Live session",
+      "instrument": "Piano · Intermediate level",
+      "progress": "Module progress",
+      "community": "40+ active teachers"
     }
   },
   "concept": {

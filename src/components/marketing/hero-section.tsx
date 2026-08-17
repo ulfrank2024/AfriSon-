@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { buttonVariants } from "@/components/ui/button";
 import { Reveal } from "@/components/motion/reveal";
+import { HeroVisual } from "./hero-visual";
 
 const STATS: Array<{ key: "students" | "teachers" | "countries" | "instruments"; value: string }> = [
   { key: "students", value: "500+" },
@@ -21,41 +22,49 @@ export function HeroSection() {
         <div className="absolute top-40 -left-24 h-64 w-64 rounded-full bg-accent/40 blur-3xl" />
       </div>
 
-      <div className="mx-auto max-w-6xl px-4 py-20 text-center">
-        <Reveal onView={false} delay={0}>
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-            {t("eyebrow")}
-          </p>
-        </Reveal>
+      <div className="mx-auto max-w-6xl px-4 py-20">
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div className="text-center lg:text-left">
+            <Reveal onView={false} delay={0}>
+              <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+                {t("eyebrow")}
+              </p>
+            </Reveal>
 
-        <Reveal onView={false} delay={0.1}>
-          <h1 className="mx-auto mt-4 max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-            {t("title")}
-          </h1>
-        </Reveal>
+            <Reveal onView={false} delay={0.1}>
+              <h1 className="mx-auto mt-4 max-w-xl text-4xl font-bold tracking-tight sm:text-5xl lg:mx-0">
+                {t("title")}
+              </h1>
+            </Reveal>
 
-        <Reveal onView={false} delay={0.2}>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-            {t("subtitle")}
-          </p>
-        </Reveal>
+            <Reveal onView={false} delay={0.2}>
+              <p className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground lg:mx-0">
+                {t("subtitle")}
+              </p>
+            </Reveal>
 
-        <Reveal onView={false} delay={0.3}>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <Link href="/signup?role=student" className={buttonVariants({ size: "lg" })}>
-              {t("ctaStudent")}
-            </Link>
-            <Link
-              href="/devenir-enseignant"
-              className={buttonVariants({ size: "lg", variant: "outline" })}
-            >
-              {t("ctaTeacher")}
-            </Link>
+            <Reveal onView={false} delay={0.3}>
+              <div className="mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+                <Link href="/signup?role=student" className={buttonVariants({ size: "lg" })}>
+                  {t("ctaStudent")}
+                </Link>
+                <Link
+                  href="/devenir-enseignant"
+                  className={buttonVariants({ size: "lg", variant: "outline" })}
+                >
+                  {t("ctaTeacher")}
+                </Link>
+              </div>
+            </Reveal>
           </div>
-        </Reveal>
+
+          <Reveal onView={false} delay={0.25}>
+            <HeroVisual />
+          </Reveal>
+        </div>
 
         <Reveal onView={false} delay={0.4}>
-          <dl className="mx-auto mt-16 grid max-w-3xl grid-cols-2 gap-8 sm:grid-cols-4">
+          <dl className="mx-auto mt-16 grid max-w-3xl grid-cols-2 gap-8 text-center sm:grid-cols-4">
             {STATS.map((stat) => (
               <div key={stat.key}>
                 <dt className="text-3xl font-bold">{stat.value}</dt>
