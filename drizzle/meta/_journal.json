@@ -8,6 +8,13 @@
       "when": 1786937637165,
       "tag": "0000_chief_newton_destine",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1786938129390,
+      "tag": "0001_slow_green_goblin",
+      "breakpoints": true
     }
   ]
 }

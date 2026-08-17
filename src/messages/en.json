@@ -75,5 +75,54 @@
     "legal": "Legal notice",
     "login": "Log in",
     "rights": "All rights reserved."
+  },
+  "auth": {
+    "unavailableTitle": "Sign-in coming soon",
+    "unavailableDescription": "Authentication is being set up. Check back shortly to create your account or log in."
+  },
+  "teacherApplication": {
+    "title": "Teacher application",
+    "description": "Share your information, we'll get back to you after reviewing your application.",
+    "fields": {
+      "fullName": "Full name",
+      "email": "Email",
+      "phone": "Phone",
+      "country": "Country",
+      "field": "Field",
+      "fieldMusic": "Music",
+      "fieldSound": "Sound engineering",
+      "teachingLanguages": "Teaching language(s)",
+      "motivation": "Introduce yourself and describe your experience"
+    },
+    "submit": "Submit my application",
+    "success": "Application sent! We'll be in touch soon.",
+    "error": "Something went wrong, please try again shortly."
+  },
+  "dashboard": {
+    "eleve": {
+      "title": "Student space",
+      "welcome": "Welcome!",
+      "subscription": { "title": "My subscription", "description": "Track your plan and its renewal." },
+      "courses": { "title": "My courses", "description": "Pick up your lessons where you left off." },
+      "community": { "title": "Community & opportunities", "description": "Concerts, seminars, and exchanges with other students." },
+      "referral": { "title": "Referral", "description": "Invite someone close and you both get a reward." }
+    },
+    "enseignant": {
+      "title": "Teacher space",
+      "welcome": "Welcome!",
+      "courses": { "title": "My courses", "description": "Create and publish your course programs." },
+      "students": { "title": "My students", "description": "Track the progress of your enrolled students." },
+      "earnings": { "title": "Earnings", "description": "Breakdown of your earnings and payout history." },
+      "live": { "title": "Live sessions", "description": "Manage your live class slots." },
+      "referral": { "title": "Invitation", "description": "Share your personal link and track sign-ups." }
+    },
+    "admin": {
+      "title": "Admin space",
+      "welcome": "Welcome!",
+      "overview": { "title": "Overview", "description": "Students, teachers, revenue by country." },
+      "applications": { "title": "Teacher applications", "description": "Queue of applications to review." },
+      "subscriptions": { "title": "Subscriptions & payments", "description": "Consolidated financial view." },
+      "events": { "title": "Events & partnerships", "description": "Concerts, seminars, institutional partners." }
+    }
   }
 }

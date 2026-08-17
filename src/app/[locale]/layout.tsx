@@ -4,6 +4,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { MotionProvider } from "@/components/motion/motion-provider";
+import { AuthProvider } from "@/modules/auth/auth-provider";
 import "../globals.css";
 
 const geistSans = Geist({
@@ -40,7 +41,9 @@ export default async function LocaleLayout({
     <html lang={locale} className={`${geistSans.variable} ${geistMono.variable}`}>
       <body>
         <NextIntlClientProvider locale={locale}>
-          <MotionProvider>{children}</MotionProvider>
+          <AuthProvider>
+            <MotionProvider>{children}</MotionProvider>
+          </AuthProvider>
         </NextIntlClientProvider>
       </body>
     </html>

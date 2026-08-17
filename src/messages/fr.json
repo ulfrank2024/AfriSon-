@@ -75,5 +75,54 @@
     "legal": "Mentions légales",
     "login": "Se connecter",
     "rights": "Tous droits réservés."
+  },
+  "auth": {
+    "unavailableTitle": "Connexion bientôt disponible",
+    "unavailableDescription": "L'authentification est en cours de configuration. Reviens un peu plus tard pour créer ton compte ou te connecter."
+  },
+  "teacherApplication": {
+    "title": "Candidature enseignant",
+    "description": "Partage tes informations, nous revenons vers toi après étude de ta candidature.",
+    "fields": {
+      "fullName": "Nom complet",
+      "email": "Email",
+      "phone": "Téléphone",
+      "country": "Pays",
+      "field": "Filière",
+      "fieldMusic": "Musique",
+      "fieldSound": "Ingénierie du son",
+      "teachingLanguages": "Langue(s) d'enseignement",
+      "motivation": "Présente-toi et décris ton expérience"
+    },
+    "submit": "Envoyer ma candidature",
+    "success": "Candidature envoyée ! Nous te recontactons rapidement.",
+    "error": "Une erreur est survenue, réessaie dans un instant."
+  },
+  "dashboard": {
+    "eleve": {
+      "title": "Espace élève",
+      "welcome": "Bienvenue !",
+      "subscription": { "title": "Mon abonnement", "description": "Suis ta formule et son renouvellement." },
+      "courses": { "title": "Mes cours", "description": "Reprends tes leçons là où tu les as laissées." },
+      "community": { "title": "Communauté & opportunités", "description": "Concerts, séminaires et échanges entre élèves." },
+      "referral": { "title": "Parrainage", "description": "Invite un proche et gagnez tous les deux une récompense." }
+    },
+    "enseignant": {
+      "title": "Espace enseignant",
+      "welcome": "Bienvenue !",
+      "courses": { "title": "Mes cours", "description": "Crée et publie tes programmes de cours." },
+      "students": { "title": "Mes élèves", "description": "Suis la progression de tes élèves inscrits." },
+      "earnings": { "title": "Revenus", "description": "Détail de tes revenus et historique des versements." },
+      "live": { "title": "Sessions live", "description": "Gère tes créneaux de cours en direct." },
+      "referral": { "title": "Invitation", "description": "Partage ton lien personnel et suis les inscriptions." }
+    },
+    "admin": {
+      "title": "Espace administrateur",
+      "welcome": "Bienvenue !",
+      "overview": { "title": "Vue d'ensemble", "description": "Élèves, enseignants, chiffre d'affaires par pays." },
+      "applications": { "title": "Candidatures enseignant", "description": "File de candidatures à traiter." },
+      "subscriptions": { "title": "Abonnements & paiements", "description": "Vue financière consolidée." },
+      "events": { "title": "Événements & partenariats", "description": "Concerts, séminaires, partenaires institutionnels." }
+    }
   }
 }
