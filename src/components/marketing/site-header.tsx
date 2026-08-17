@@ -1,16 +1,43 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { buttonVariants } from "@/components/ui/button";
 import { LocaleSwitcher } from "./locale-switcher";
 import { LogoMark } from "./logo-mark";
-import { Reveal } from "@/components/motion/reveal";
+import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
   const t = useTranslations("nav");
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <Reveal onView={false} y={-8} className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur">
-      <header className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
+    <motion.div
+      initial={{ y: -8, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      className={cn(
+        "sticky top-0 z-50 border-b backdrop-blur transition-[background-color,box-shadow] duration-300",
+        scrolled
+          ? "border-border bg-background/95 shadow-sm"
+          : "border-transparent bg-background/60",
+      )}
+    >
+      <header
+        className={cn(
+          "mx-auto flex max-w-6xl items-center justify-between px-4 transition-[height] duration-300",
+          scrolled ? "h-14" : "h-16",
+        )}
+      >
         <Link href="/" className="flex items-center gap-2 text-lg font-bold tracking-tight">
           <LogoMark />
           AfriSon Academy
@@ -41,6 +68,6 @@ export function SiteHeader() {
           </Link>
         </div>
       </header>
-    </Reveal>
+    </motion.div>
   );
 }
