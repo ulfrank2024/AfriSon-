@@ -11,7 +11,11 @@ html {
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
+  /* overflow-x: clip (not hidden) avoids the CSS quirk where setting only
+     one axis to a non-visible value forces the other axis to "auto",
+     which would turn html/body into their own scroll container and
+     break position: sticky for children like the header. */
+  overflow-x: clip;
 }
 
 body {
