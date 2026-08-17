@@ -58,6 +58,12 @@ export function SiteFooter() {
                 <FooterLink href="/#how-it-works">{nav("howItWorks")}</FooterLink>
               </li>
               <li>
+                <FooterLink href="/evenements">{nav("events")}</FooterLink>
+              </li>
+              <li>
+                <FooterLink href="/blog">{nav("blog")}</FooterLink>
+              </li>
+              <li>
                 <FooterLink href="/#become-teacher">{nav("becomeTeacher")}</FooterLink>
               </li>
             </ul>

@@ -13,6 +13,8 @@ const NAV_ITEMS = [
   { href: "/#concept", labelKey: "concept" },
   { href: "/#instruments", labelKey: "instruments" },
   { href: "/#how-it-works", labelKey: "howItWorks" },
+  { href: "/evenements", labelKey: "events" },
+  { href: "/blog", labelKey: "blog" },
   { href: "/#become-teacher", labelKey: "becomeTeacher" },
 ] as const;
 
@@ -59,7 +61,7 @@ export function SiteHeader() {
           AfriSon Academy
         </Link>
 
-        <nav className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
+        <nav className="hidden items-center gap-5 text-sm text-muted-foreground lg:flex">
           {NAV_ITEMS.map((item) => (
             <NavLink key={item.href} href={item.href}>
               {t(item.labelKey)}
