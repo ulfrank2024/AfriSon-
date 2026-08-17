@@ -31,7 +31,10 @@ export function SiteFooter() {
   const nav = useTranslations("nav");
 
   return (
-    <footer className="mt-auto border-t bg-muted/20">
+    // Scoped `dark` class: the footer always renders with the dark
+    // palette tokens (see globals.css `.dark { ... }`), independent of
+    // the page's own light/dark mode, for a consistently darker band.
+    <footer className="dark mt-auto border-t border-border bg-background text-foreground">
       <Reveal className="mx-auto max-w-6xl px-4 py-12">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div className="sm:col-span-2 lg:col-span-1">
