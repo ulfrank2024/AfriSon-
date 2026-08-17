@@ -9,6 +9,22 @@ import { LocaleSwitcher } from "./locale-switcher";
 import { LogoMark } from "./logo-mark";
 import { cn } from "@/lib/utils";
 
+const NAV_ITEMS = [
+  { href: "/#concept", labelKey: "concept" },
+  { href: "/#instruments", labelKey: "instruments" },
+  { href: "/#how-it-works", labelKey: "howItWorks" },
+  { href: "/#become-teacher", labelKey: "becomeTeacher" },
+] as const;
+
+function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <Link href={href} className="group relative py-1 transition-colors hover:text-foreground">
+      {children}
+      <span className="absolute inset-x-0 -bottom-0.5 h-0.5 origin-left scale-x-0 rounded-full bg-primary transition-transform duration-300 ease-out group-hover:scale-x-100" />
+    </Link>
+  );
+}
+
 export function SiteHeader() {
   const t = useTranslations("nav");
   const [scrolled, setScrolled] = useState(false);
@@ -44,18 +60,11 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
-          <Link href="/#concept" className="hover:text-foreground">
-            {t("concept")}
-          </Link>
-          <Link href="/#instruments" className="hover:text-foreground">
-            {t("instruments")}
-          </Link>
-          <Link href="/#how-it-works" className="hover:text-foreground">
-            {t("howItWorks")}
-          </Link>
-          <Link href="/#become-teacher" className="hover:text-foreground">
-            {t("becomeTeacher")}
-          </Link>
+          {NAV_ITEMS.map((item) => (
+            <NavLink key={item.href} href={item.href}>
+              {t(item.labelKey)}
+            </NavLink>
+          ))}
         </nav>
 
         <div className="flex items-center gap-3">
