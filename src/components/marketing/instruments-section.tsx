@@ -5,6 +5,8 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
+import { Reveal } from "@/components/motion/reveal";
+import { StaggerGroup, StaggerItem } from "@/components/motion/stagger-group";
 
 const CATEGORIES: Array<"traditional" | "modern" | "sound"> = [
   "traditional",
@@ -18,20 +20,24 @@ export function InstrumentsSection() {
   return (
     <section id="instruments" className="bg-muted/40 py-20">
       <div className="mx-auto max-w-6xl px-4">
-        <h2 className="text-center text-3xl font-bold tracking-tight">
-          {t("title")}
-        </h2>
+        <Reveal>
+          <h2 className="text-center text-3xl font-bold tracking-tight">
+            {t("title")}
+          </h2>
+        </Reveal>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-3">
+        <StaggerGroup className="mt-12 grid gap-6 sm:grid-cols-3">
           {CATEGORIES.map((category) => (
-            <Card key={category}>
-              <CardHeader>
-                <CardTitle>{t(`${category}.title`)}</CardTitle>
-                <CardDescription>{t(`${category}.description`)}</CardDescription>
-              </CardHeader>
-            </Card>
+            <StaggerItem key={category}>
+              <Card>
+                <CardHeader>
+                  <CardTitle>{t(`${category}.title`)}</CardTitle>
+                  <CardDescription>{t(`${category}.description`)}</CardDescription>
+                </CardHeader>
+              </Card>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerGroup>
       </div>
     </section>
   );

@@ -1,4 +1,6 @@
 import { useTranslations } from "next-intl";
+import { Reveal } from "@/components/motion/reveal";
+import { StaggerGroup, StaggerItem } from "@/components/motion/stagger-group";
 
 const STEPS: Array<"signup" | "plan" | "learn" | "stage"> = [
   "signup",
@@ -12,13 +14,18 @@ export function HowItWorksSection() {
 
   return (
     <section id="how-it-works" className="mx-auto max-w-6xl px-4 py-20">
-      <h2 className="text-center text-3xl font-bold tracking-tight">
-        {t("title")}
-      </h2>
+      <Reveal>
+        <h2 className="text-center text-3xl font-bold tracking-tight">
+          {t("title")}
+        </h2>
+      </Reveal>
 
-      <ol className="mt-12 grid gap-8 sm:grid-cols-4">
+      <StaggerGroup
+        className="mt-12 grid gap-8 sm:grid-cols-4"
+        staggerDelay={0.12}
+      >
         {STEPS.map((step, index) => (
-          <li key={step} className="text-center">
+          <StaggerItem key={step} className="text-center">
             <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
               {index + 1}
             </div>
@@ -26,9 +33,9 @@ export function HowItWorksSection() {
             <p className="mt-2 text-sm text-muted-foreground">
               {t(`steps.${step}.description`)}
             </p>
-          </li>
+          </StaggerItem>
         ))}
-      </ol>
+      </StaggerGroup>
     </section>
   );
 }

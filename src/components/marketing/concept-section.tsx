@@ -5,6 +5,8 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
+import { Reveal } from "@/components/motion/reveal";
+import { StaggerGroup, StaggerItem } from "@/components/motion/stagger-group";
 
 const SPACES: Array<"student" | "teacher" | "promoter"> = [
   "student",
@@ -17,20 +19,24 @@ export function ConceptSection() {
 
   return (
     <section id="concept" className="mx-auto max-w-6xl px-4 py-20">
-      <h2 className="text-center text-3xl font-bold tracking-tight">
-        {t("title")}
-      </h2>
+      <Reveal>
+        <h2 className="text-center text-3xl font-bold tracking-tight">
+          {t("title")}
+        </h2>
+      </Reveal>
 
-      <div className="mt-12 grid gap-6 sm:grid-cols-3">
+      <StaggerGroup className="mt-12 grid gap-6 sm:grid-cols-3">
         {SPACES.map((space) => (
-          <Card key={space}>
-            <CardHeader>
-              <CardTitle>{t(`${space}.title`)}</CardTitle>
-              <CardDescription>{t(`${space}.description`)}</CardDescription>
-            </CardHeader>
-          </Card>
+          <StaggerItem key={space}>
+            <Card>
+              <CardHeader>
+                <CardTitle>{t(`${space}.title`)}</CardTitle>
+                <CardDescription>{t(`${space}.description`)}</CardDescription>
+              </CardHeader>
+            </Card>
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerGroup>
     </section>
   );
 }

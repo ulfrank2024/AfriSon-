@@ -2,13 +2,14 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { buttonVariants } from "@/components/ui/button";
 import { LocaleSwitcher } from "./locale-switcher";
+import { Reveal } from "@/components/motion/reveal";
 
 export function SiteHeader() {
   const t = useTranslations("nav");
 
   return (
-    <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
+    <Reveal onView={false} y={-8} className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur">
+      <header className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
         <Link href="/" className="text-lg font-bold tracking-tight">
           AfriSon Academy
         </Link>
@@ -37,7 +38,7 @@ export function SiteHeader() {
             {t("signup")}
           </Link>
         </div>
-      </div>
-    </header>
+      </header>
+    </Reveal>
   );
 }
