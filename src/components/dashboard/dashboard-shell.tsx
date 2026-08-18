@@ -24,7 +24,7 @@ export function DashboardShell({
   return (
     <div className="mx-auto max-w-5xl px-4 py-12">
       <Reveal onView={false}>
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <Badge variant="secondary">{badge}</Badge>
             <h1 className="mt-3 text-2xl font-bold tracking-tight">{title}</h1>
