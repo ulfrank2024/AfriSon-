@@ -43,7 +43,17 @@
       "title": "Sound engineering",
       "description": "Technical training to become a sound engineer.",
       "examples": ["Recording", "Mixing", "Mastering", "Home studio"]
-    }
+    },
+    "galleryTitle": "A few instruments from the catalog",
+    "gallery": {
+      "djembe": "Djembe",
+      "acoustic": "Acoustic guitar",
+      "electric": "Electric guitar",
+      "bass": "Bass",
+      "drums": "Drums",
+      "keyboard": "Keyboard"
+    },
+    "studioTitle": "Behind the scenes in a studio"
   },
   "rhythms": {
     "eyebrow": "Rhythms & music",

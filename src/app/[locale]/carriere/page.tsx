@@ -61,10 +61,17 @@ export default async function CarrierePage() {
         </section>
 
         <div className="mx-auto max-w-4xl px-4 py-16">
-          <Reveal>
-            <p className="max-w-2xl text-lg text-muted-foreground">
-              {t("description")}
-            </p>
+          <Reveal className="grid items-center gap-8 sm:grid-cols-[1.3fr_1fr]">
+            <p className="text-lg text-muted-foreground">{t("description")}</p>
+            <div className="relative h-40 overflow-hidden rounded-2xl shadow-md sm:h-48">
+              <Image
+                src="/images/piano-note.jpg"
+                alt=""
+                fill
+                sizes="(min-width: 640px) 33vw, 100vw"
+                className="object-cover"
+              />
+            </div>
           </Reveal>
 
           <h2 className="mt-16 text-sm font-semibold tracking-wider text-muted-foreground uppercase">

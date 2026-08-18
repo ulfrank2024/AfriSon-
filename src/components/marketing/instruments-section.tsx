@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { IconBadge } from "./icon-badge";
+import { Marquee } from "./marquee";
 import { Reveal } from "@/components/motion/reveal";
 import { StaggerGroup, StaggerItem } from "@/components/motion/stagger-group";
 
@@ -18,6 +19,23 @@ const CATEGORIES = [
   { key: "modern", icon: Guitar, image: "/images/guitar-lesson.jpg" },
   { key: "sound", icon: SlidersHorizontal, image: "/images/mixing-console.jpg" },
 ] as const;
+
+const GALLERY = [
+  { key: "djembe", image: "/images/djembe-hands.jpg" },
+  { key: "acoustic", image: "/images/acoustic-guitar.jpg" },
+  { key: "electric", image: "/images/electric-guitar.jpg" },
+  { key: "bass", image: "/images/bass-guitar.jpg" },
+  { key: "drums", image: "/images/drums.jpg" },
+  { key: "keyboard", image: "/images/keyboard.jpg" },
+] as const;
+
+const STUDIO_IMAGES = [
+  "/images/mixing-console-2.jpg",
+  "/images/mixing-board-green.jpg",
+  "/images/mixer-shallow-focus.jpg",
+  "/images/mixer-closeup.jpg",
+  "/images/audio-controller.jpg",
+];
 
 export function InstrumentsSection() {
   const t = useTranslations("instruments");
@@ -63,6 +81,53 @@ export function InstrumentsSection() {
             </StaggerItem>
           ))}
         </StaggerGroup>
+
+        <Reveal className="mt-20">
+          <p className="text-center text-sm font-semibold tracking-wider text-muted-foreground uppercase">
+            {t("galleryTitle")}
+          </p>
+        </Reveal>
+
+        <StaggerGroup
+          className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6"
+          staggerDelay={0.06}
+        >
+          {GALLERY.map((item) => (
+            <StaggerItem key={item.key}>
+              <div className="group relative aspect-square overflow-hidden rounded-xl">
+                <Image
+                  src={item.image}
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 16vw, (min-width: 640px) 33vw, 50vw"
+                  className="object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-transparent" />
+                <p className="absolute right-2 bottom-2 left-2 text-xs font-semibold text-white sm:text-sm">
+                  {t(`gallery.${item.key}`)}
+                </p>
+              </div>
+            </StaggerItem>
+          ))}
+        </StaggerGroup>
+
+        <Reveal className="mt-20">
+          <p className="text-center text-sm font-semibold tracking-wider text-muted-foreground uppercase">
+            {t("studioTitle")}
+          </p>
+          <div className="mt-6">
+            <Marquee>
+              {STUDIO_IMAGES.map((src) => (
+                <div
+                  key={src}
+                  className="relative h-40 w-64 shrink-0 overflow-hidden rounded-xl sm:h-48 sm:w-72"
+                >
+                  <Image src={src} alt="" fill sizes="300px" className="object-cover" />
+                </div>
+              ))}
+            </Marquee>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

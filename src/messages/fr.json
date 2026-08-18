@@ -43,7 +43,17 @@
       "title": "Ingénierie du son",
       "description": "Formation technique pour devenir ingénieur du son.",
       "examples": ["Prise de son", "Mixage", "Mastering", "Home studio"]
-    }
+    },
+    "galleryTitle": "Quelques instruments du catalogue",
+    "gallery": {
+      "djembe": "Djembé",
+      "acoustic": "Guitare acoustique",
+      "electric": "Guitare électrique",
+      "bass": "Basse",
+      "drums": "Batterie",
+      "keyboard": "Clavier"
+    },
+    "studioTitle": "Dans les coulisses d'un studio"
   },
   "rhythms": {
     "eyebrow": "Rythmes & musiques",
