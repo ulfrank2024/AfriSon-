@@ -2,6 +2,8 @@
 
 import { useActionState } from "react";
 import { useTranslations } from "next-intl";
+import { ArrowLeft } from "lucide-react";
+import { Link } from "@/i18n/navigation";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -31,78 +33,88 @@ export function TeacherApplicationForm({
   const [state, formAction, isPending] = useActionState(action, initialState);
 
   return (
-    <form action={formAction} className="mx-auto max-w-xl space-y-6 px-4 py-16">
-      <div>
-        <h1 className="text-2xl font-bold tracking-tight">{t("title")}</h1>
-        <p className="mt-1 text-sm text-muted-foreground">{t("description")}</p>
-      </div>
+    <div className="mx-auto max-w-xl px-4 py-16">
+      <Link
+        href="/carriere"
+        className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+      >
+        <ArrowLeft className="size-4" />
+        {t("back")}
+      </Link>
 
-      <div className="space-y-2">
-        <Label htmlFor="fullName">{t("fields.fullName")}</Label>
-        <Input id="fullName" name="fullName" required minLength={2} maxLength={120} />
-      </div>
+      <form action={formAction} className="mt-6 space-y-6">
+        <div>
+          <h1 className="text-2xl font-bold tracking-tight">{t("title")}</h1>
+          <p className="mt-1 text-sm text-muted-foreground">{t("description")}</p>
+        </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label htmlFor="email">{t("fields.email")}</Label>
-          <Input id="email" name="email" type="email" required />
+          <Label htmlFor="fullName">{t("fields.fullName")}</Label>
+          <Input id="fullName" name="fullName" required minLength={2} maxLength={120} />
         </div>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="space-y-2">
+            <Label htmlFor="email">{t("fields.email")}</Label>
+            <Input id="email" name="email" type="email" required />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="phone">{t("fields.phone")}</Label>
+            <Input id="phone" name="phone" type="tel" required />
+          </div>
+        </div>
+
         <div className="space-y-2">
-          <Label htmlFor="phone">{t("fields.phone")}</Label>
-          <Input id="phone" name="phone" type="tel" required />
+          <Label htmlFor="country">{t("fields.country")}</Label>
+          <Input id="country" name="country" required />
         </div>
-      </div>
 
-      <div className="space-y-2">
-        <Label htmlFor="country">{t("fields.country")}</Label>
-        <Input id="country" name="country" required />
-      </div>
+        <fieldset className="space-y-2">
+          <legend className="text-sm font-medium">{t("fields.field")}</legend>
+          <RadioGroup name="field" defaultValue={defaultField} className="flex gap-6">
+            <label className="flex items-center gap-2 text-sm">
+              <RadioGroupItem value="musique" />
+              {t("fields.fieldMusic")}
+            </label>
+            <label className="flex items-center gap-2 text-sm">
+              <RadioGroupItem value="son" />
+              {t("fields.fieldSound")}
+            </label>
+          </RadioGroup>
+        </fieldset>
 
-      <fieldset className="space-y-2">
-        <legend className="text-sm font-medium">{t("fields.field")}</legend>
-        <RadioGroup name="field" defaultValue={defaultField} className="flex gap-6">
-          <label className="flex items-center gap-2 text-sm">
-            <RadioGroupItem value="musique" />
-            {t("fields.fieldMusic")}
-          </label>
-          <label className="flex items-center gap-2 text-sm">
-            <RadioGroupItem value="son" />
-            {t("fields.fieldSound")}
-          </label>
-        </RadioGroup>
-      </fieldset>
+        <fieldset className="space-y-2">
+          <legend className="text-sm font-medium">{t("fields.teachingLanguages")}</legend>
+          <div className="flex gap-6">
+            <label className="flex items-center gap-2 text-sm">
+              <Checkbox name="teachingLanguages" value="fr" defaultChecked />
+              Français
+            </label>
+            <label className="flex items-center gap-2 text-sm">
+              <Checkbox name="teachingLanguages" value="en" />
+              English
+            </label>
+          </div>
+        </fieldset>
 
-      <fieldset className="space-y-2">
-        <legend className="text-sm font-medium">{t("fields.teachingLanguages")}</legend>
-        <div className="flex gap-6">
-          <label className="flex items-center gap-2 text-sm">
-            <Checkbox name="teachingLanguages" value="fr" defaultChecked />
-            Français
-          </label>
-          <label className="flex items-center gap-2 text-sm">
-            <Checkbox name="teachingLanguages" value="en" />
-            English
-          </label>
+        <div className="space-y-2">
+          <Label htmlFor="motivation">{t("fields.motivation")}</Label>
+          <Textarea id="motivation" name="motivation" required minLength={20} rows={5} />
         </div>
-      </fieldset>
 
-      <div className="space-y-2">
-        <Label htmlFor="motivation">{t("fields.motivation")}</Label>
-        <Textarea id="motivation" name="motivation" required minLength={20} rows={5} />
-      </div>
+        <Button type="submit" size="lg" disabled={isPending}>
+          {t("submit")}
+        </Button>
 
-      <Button type="submit" size="lg" disabled={isPending}>
-        {t("submit")}
-      </Button>
-
-      {state?.ok === true && (
-        <p className="text-sm font-medium text-green-600 dark:text-green-500">
-          {t("success")}
-        </p>
-      )}
-      {state?.ok === false && (
-        <p className="text-sm font-medium text-destructive">{t("error")}</p>
-      )}
-    </form>
+        {state?.ok === true && (
+          <p className="text-sm font-medium text-green-600 dark:text-green-500">
+            {t("success")}
+          </p>
+        )}
+        {state?.ok === false && (
+          <p className="text-sm font-medium text-destructive">{t("error")}</p>
+        )}
+      </form>
+    </div>
   );
 }

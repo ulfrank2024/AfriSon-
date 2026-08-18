@@ -144,6 +144,7 @@
     "unavailableDescription": "Authentication is being set up. Check back shortly to create your account or log in."
   },
   "teacherApplication": {
+    "back": "Back to careers",
     "title": "Teacher application",
     "description": "Share your information, we'll get back to you after reviewing your application.",
     "fields": {

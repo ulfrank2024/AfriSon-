@@ -144,6 +144,7 @@
     "unavailableDescription": "L'authentification est en cours de configuration. Reviens un peu plus tard pour créer ton compte ou te connecter."
   },
   "teacherApplication": {
+    "back": "Retour aux carrières",
     "title": "Candidature enseignant",
     "description": "Partage tes informations, nous revenons vers toi après étude de ta candidature.",
     "fields": {
