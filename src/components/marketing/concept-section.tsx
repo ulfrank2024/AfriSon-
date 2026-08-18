@@ -29,7 +29,7 @@ export function ConceptSection() {
       <StaggerGroup className="mx-auto mt-12 grid max-w-2xl gap-6 sm:grid-cols-2">
         {SPACES.map((space) => (
           <StaggerItem key={space.key}>
-            <Card>
+            <Card className="transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
               <CardHeader>
                 <IconBadge icon={space.icon} className="mb-2" />
                 <CardTitle>{t(`${space.key}.title`)}</CardTitle>

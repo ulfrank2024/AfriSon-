@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Separator } from "@/components/ui/separator";
 import { LogoMark } from "./logo-mark";
+import { PatternStrip } from "./pattern-strip";
 import { Reveal } from "@/components/motion/reveal";
 
 function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
@@ -34,7 +35,8 @@ export function SiteFooter() {
     // Scoped `dark` class: the footer always renders with the dark
     // palette tokens (see globals.css `.dark { ... }`), independent of
     // the page's own light/dark mode, for a consistently darker band.
-    <footer className="dark mt-auto border-t border-border bg-background text-foreground">
+    <footer className="dark mt-auto bg-background text-foreground">
+      <PatternStrip />
       <Reveal className="mx-auto max-w-6xl px-4 py-12">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div className="sm:col-span-2 lg:col-span-1">

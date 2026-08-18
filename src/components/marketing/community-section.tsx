@@ -30,7 +30,7 @@ export function CommunitySection() {
         <StaggerGroup className="mt-12 grid gap-6 sm:grid-cols-3">
           {ITEMS.map((item) => (
             <StaggerItem key={item.key}>
-              <Card>
+              <Card className="transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                 <CardHeader>
                   <IconBadge icon={item.icon} className="mb-2" />
                   <CardTitle>{t(`${item.key}.title`)}</CardTitle>

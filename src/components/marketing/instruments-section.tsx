@@ -34,14 +34,14 @@ export function InstrumentsSection() {
         <StaggerGroup className="mt-12 grid gap-6 sm:grid-cols-3">
           {CATEGORIES.map((category) => (
             <StaggerItem key={category.key}>
-              <Card className="h-full gap-0 overflow-hidden py-0">
-                <div className="relative h-40 w-full">
+              <Card className="group h-full gap-0 overflow-hidden py-0 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                <div className="relative h-40 w-full overflow-hidden">
                   <Image
                     src={category.image}
                     alt=""
                     fill
                     sizes="(min-width: 640px) 33vw, 100vw"
-                    className="object-cover"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   <IconBadge
                     icon={category.icon}

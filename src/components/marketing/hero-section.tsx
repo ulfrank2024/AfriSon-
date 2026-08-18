@@ -3,12 +3,17 @@ import { Link } from "@/i18n/navigation";
 import { buttonVariants } from "@/components/ui/button";
 import { Reveal } from "@/components/motion/reveal";
 import { HeroVisual } from "./hero-visual";
+import { AnimatedStat } from "./animated-stat";
 
-const STATS: Array<{ key: "students" | "teachers" | "countries" | "instruments"; value: string }> = [
-  { key: "students", value: "500+" },
-  { key: "teachers", value: "40+" },
-  { key: "countries", value: "5" },
-  { key: "instruments", value: "20+" },
+const STATS: Array<{
+  key: "students" | "teachers" | "countries" | "instruments";
+  value: number;
+  suffix?: string;
+}> = [
+  { key: "students", value: 500, suffix: "+" },
+  { key: "teachers", value: 40, suffix: "+" },
+  { key: "countries", value: 5 },
+  { key: "instruments", value: 20, suffix: "+" },
 ];
 
 export function HeroSection() {
@@ -65,9 +70,15 @@ export function HeroSection() {
 
         <Reveal onView={false} delay={0.4}>
           <dl className="mx-auto mt-16 grid max-w-3xl grid-cols-2 gap-8 text-center sm:grid-cols-4">
-            {STATS.map((stat) => (
+            {STATS.map((stat, index) => (
               <div key={stat.key}>
-                <dt className="text-3xl font-bold">{stat.value}</dt>
+                <dt className="text-3xl font-bold">
+                  <AnimatedStat
+                    value={stat.value}
+                    suffix={stat.suffix}
+                    delay={index * 0.1}
+                  />
+                </dt>
                 <dd className="mt-1 text-sm text-muted-foreground">
                   {t(`stats.${stat.key}`)}
                 </dd>

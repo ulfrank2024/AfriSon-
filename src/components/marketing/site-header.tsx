@@ -7,6 +7,7 @@ import { Link } from "@/i18n/navigation";
 import { buttonVariants } from "@/components/ui/button";
 import { LocaleSwitcher } from "./locale-switcher";
 import { LogoMark } from "./logo-mark";
+import { PatternStrip } from "./pattern-strip";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
@@ -44,10 +45,8 @@ export function SiteHeader() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className={cn(
-        "sticky top-0 z-50 border-b backdrop-blur transition-[background-color,box-shadow] duration-300",
-        scrolled
-          ? "border-border bg-background/95 shadow-sm"
-          : "border-transparent bg-background/60",
+        "sticky top-0 z-50 backdrop-blur transition-[background-color,box-shadow] duration-300",
+        scrolled ? "bg-background/95 shadow-sm" : "bg-background/60",
       )}
     >
       <header
@@ -79,6 +78,7 @@ export function SiteHeader() {
           </Link>
         </div>
       </header>
+      <PatternStrip />
     </motion.div>
   );
 }
