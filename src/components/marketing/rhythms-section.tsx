@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { IconBadge } from "./icon-badge";
+import { Marquee } from "./marquee";
 import { Reveal } from "@/components/motion/reveal";
 import { StaggerGroup, StaggerItem } from "@/components/motion/stagger-group";
 
@@ -43,16 +44,18 @@ export function RhythmsSection() {
         ))}
       </StaggerGroup>
 
-      <Reveal className="mt-14 text-center">
-        <p className="text-sm font-semibold tracking-wider text-muted-foreground uppercase">
+      <Reveal className="mt-14">
+        <p className="text-center text-sm font-semibold tracking-wider text-muted-foreground uppercase">
           {t("moreTitle")}
         </p>
-        <div className="mx-auto mt-4 flex max-w-3xl flex-wrap justify-center gap-2">
-          {t.raw("more").map((name: string) => (
-            <Badge key={name} variant="secondary">
-              {name}
-            </Badge>
-          ))}
+        <div className="mt-4">
+          <Marquee>
+            {t.raw("more").map((name: string) => (
+              <Badge key={name} variant="secondary" className="shrink-0">
+                {name}
+              </Badge>
+            ))}
+          </Marquee>
         </div>
       </Reveal>
     </section>
