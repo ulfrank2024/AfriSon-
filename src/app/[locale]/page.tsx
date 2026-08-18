@@ -2,6 +2,7 @@ import { setRequestLocale } from "next-intl/server";
 import { SiteHeader } from "@/components/marketing/site-header";
 import { HeroSection } from "@/components/marketing/hero-section";
 import { InstrumentsSection } from "@/components/marketing/instruments-section";
+import { RhythmsSection } from "@/components/marketing/rhythms-section";
 import { HowItWorksSection } from "@/components/marketing/how-it-works-section";
 import { CommunitySection } from "@/components/marketing/community-section";
 import { EventsPromoSection } from "@/components/marketing/events-promo-section";
@@ -18,6 +19,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
       <main>
         <HeroSection />
         <InstrumentsSection />
+        <RhythmsSection />
         <HowItWorksSection />
         <CommunitySection />
         <EventsPromoSection />

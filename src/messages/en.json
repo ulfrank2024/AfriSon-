@@ -45,6 +45,45 @@
       "examples": ["Recording", "Mixing", "Mastering", "Home studio"]
     }
   },
+  "rhythms": {
+    "eyebrow": "Rhythms & music",
+    "title": "One continent, a thousand rhythms",
+    "description": "From West Africa to Southern Africa, every region has forged its own styles. Discover the musical context behind the instruments you're learning.",
+    "genres": {
+      "makossa": {
+        "name": "Makossa",
+        "region": "Cameroon · Central Africa",
+        "description": "Urban rhythm popularized by Manu Dibango, a pillar of modern Cameroonian music."
+      },
+      "afrobeat": {
+        "name": "Afrobeat",
+        "region": "Nigeria · West Africa",
+        "description": "A fusion of jazz, funk, and Yoruba rhythms carried by Fela Kuti."
+      },
+      "rumba": {
+        "name": "Congolese rumba",
+        "region": "DR Congo · Central Africa",
+        "description": "The founding rhythm of modern Central African music, born in the 1940s."
+      },
+      "mbalax": {
+        "name": "Mbalax",
+        "region": "Senegal · West Africa",
+        "description": "Sabar drum polyrhythms popularized by Youssou N'Dour."
+      },
+      "amapiano": {
+        "name": "Amapiano",
+        "region": "South Africa · Southern Africa",
+        "description": "A fusion of house, jazz, and kwaito born in the townships of Pretoria."
+      },
+      "rai": {
+        "name": "Raï",
+        "region": "Algeria · North Africa",
+        "description": "Popular song born in Oran, blending Bedouin tradition with modern sound."
+      }
+    },
+    "moreTitle": "And many more",
+    "more": ["Bikutsi", "Highlife", "Soukous", "Coupé-décalé", "Kwaito", "Taarab", "Benga", "Gnawa", "Chaâbi", "Zouglou", "Kizomba", "Mbube"]
+  },
   "howItWorks": {
     "title": "How it works",
     "steps": {

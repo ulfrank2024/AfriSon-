@@ -45,6 +45,45 @@
       "examples": ["Prise de son", "Mixage", "Mastering", "Home studio"]
     }
   },
+  "rhythms": {
+    "eyebrow": "Rythmes & musiques",
+    "title": "Un continent, mille rythmes",
+    "description": "De l'Afrique de l'Ouest à l'Afrique australe, chaque région a forgé ses propres styles. Découvre le contexte musical derrière les instruments que tu apprends.",
+    "genres": {
+      "makossa": {
+        "name": "Makossa",
+        "region": "Cameroun · Afrique centrale",
+        "description": "Rythme urbain popularisé par Manu Dibango, pilier de la musique camerounaise moderne."
+      },
+      "afrobeat": {
+        "name": "Afrobeat",
+        "region": "Nigeria · Afrique de l'Ouest",
+        "description": "Fusion de jazz, de funk et de rythmes yoruba portée par Fela Kuti."
+      },
+      "rumba": {
+        "name": "Rumba congolaise",
+        "region": "RD Congo · Afrique centrale",
+        "description": "Rythme fondateur de la musique moderne d'Afrique centrale, né dans les années 1940."
+      },
+      "mbalax": {
+        "name": "Mbalax",
+        "region": "Sénégal · Afrique de l'Ouest",
+        "description": "Polyrythmies de percussions sabar popularisées par Youssou N'Dour."
+      },
+      "amapiano": {
+        "name": "Amapiano",
+        "region": "Afrique du Sud · Afrique australe",
+        "description": "Fusion de house, de jazz et de kwaito née dans les townships de Pretoria."
+      },
+      "rai": {
+        "name": "Raï",
+        "region": "Algérie · Afrique du Nord",
+        "description": "Chant populaire né à Oran, entre tradition bédouine et sonorités modernes."
+      }
+    },
+    "moreTitle": "Et bien d'autres encore",
+    "more": ["Bikutsi", "Highlife", "Soukous", "Coupé-décalé", "Kwaito", "Taarab", "Benga", "Gnawa", "Chaâbi", "Zouglou", "Kizomba", "Mbube"]
+  },
   "howItWorks": {
     "title": "Comment ça marche",
     "steps": {
