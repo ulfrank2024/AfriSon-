@@ -22,7 +22,11 @@ async function action(
   return submitTeacherApplication(formData);
 }
 
-export function TeacherApplicationForm() {
+export function TeacherApplicationForm({
+  defaultField = "musique",
+}: {
+  defaultField?: "musique" | "son";
+}) {
   const t = useTranslations("teacherApplication");
   const [state, formAction, isPending] = useActionState(action, initialState);
 
@@ -56,7 +60,7 @@ export function TeacherApplicationForm() {
 
       <fieldset className="space-y-2">
         <legend className="text-sm font-medium">{t("fields.field")}</legend>
-        <RadioGroup name="field" defaultValue="musique" className="flex gap-6">
+        <RadioGroup name="field" defaultValue={defaultField} className="flex gap-6">
           <label className="flex items-center gap-2 text-sm">
             <RadioGroupItem value="musique" />
             {t("fields.fieldMusic")}

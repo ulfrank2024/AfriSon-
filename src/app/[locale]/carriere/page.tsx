@@ -17,8 +17,18 @@ import {
 } from "@/components/ui/card";
 
 const POSITIONS = [
-  { key: "music", icon: GraduationCap, image: "/images/guitar-lesson.jpg" },
-  { key: "sound", icon: SlidersHorizontal, image: "/images/mixing-console.jpg" },
+  {
+    key: "music",
+    icon: GraduationCap,
+    image: "/images/guitar-lesson.jpg",
+    filiere: "musique",
+  },
+  {
+    key: "sound",
+    icon: SlidersHorizontal,
+    image: "/images/mixing-console.jpg",
+    filiere: "son",
+  },
 ] as const;
 
 export default async function CarrierePage() {
@@ -86,7 +96,7 @@ export default async function CarrierePage() {
                   </CardHeader>
                   <CardFooter className="mt-auto pb-6">
                     <Link
-                      href="/devenir-enseignant"
+                      href={`/devenir-enseignant?filiere=${position.filiere}`}
                       className={buttonVariants({ className: "w-full" })}
                     >
                       {t("apply")}
