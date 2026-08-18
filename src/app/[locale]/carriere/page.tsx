@@ -80,11 +80,11 @@ export default async function CarrierePage() {
                   </div>
                   <CardHeader className="pt-8">
                     <CardTitle>{t(`positions.${position.key}.title`)}</CardTitle>
-                    <CardDescription>
+                    <CardDescription className="min-h-[3.75rem] leading-relaxed line-clamp-3">
                       {t(`positions.${position.key}.description`)}
                     </CardDescription>
                   </CardHeader>
-                  <CardFooter className="pb-6">
+                  <CardFooter className="mt-auto pb-6">
                     <Link
                       href="/devenir-enseignant"
                       className={buttonVariants({ className: "w-full" })}
