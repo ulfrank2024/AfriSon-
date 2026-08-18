@@ -7,7 +7,12 @@ import { cn } from "@/lib/utils";
 
 const GENRES = ["makossa", "afrobeat", "rumba", "mbalax", "amapiano", "rai"] as const;
 
-const ACCENTS = ["text-primary", "text-chart-2", "text-chart-3", "text-accent-foreground"];
+const ACCENTS = [
+  { text: "text-primary", bar: "bg-primary" },
+  { text: "text-chart-2", bar: "bg-chart-2" },
+  { text: "text-chart-3", bar: "bg-chart-3" },
+  { text: "text-accent-foreground", bar: "bg-accent-foreground" },
+];
 
 const PILL_STYLES = [
   "border-primary/20 bg-primary/10 text-primary",
@@ -35,28 +40,43 @@ export function RhythmsSection() {
           const accent = ACCENTS[index % ACCENTS.length];
           return (
             <StaggerItem key={genre}>
-              <div className="group grid grid-cols-[2.5rem_1fr] items-baseline gap-x-5 gap-y-2 border-b border-border px-2 py-7 transition-colors last:border-b-0 hover:bg-muted/40 sm:grid-cols-[3rem_16rem_1fr] sm:items-center">
+              <div className="group relative overflow-hidden border-b border-border px-2 py-7 transition-colors last:border-b-0 hover:bg-muted/40 sm:px-3">
                 <span
+                  aria-hidden
                   className={cn(
-                    "font-heading text-2xl font-bold tabular-nums opacity-60 transition-opacity group-hover:opacity-100 sm:text-3xl",
-                    accent,
+                    "absolute inset-y-0 left-0 w-1 origin-top scale-y-0 transition-transform duration-300 ease-out group-hover:scale-y-100",
+                    accent.bar,
                   )}
-                >
-                  {String(index + 1).padStart(2, "0")}
-                </span>
+                />
 
-                <div>
-                  <h3 className="text-xl font-bold tracking-tight sm:text-2xl">
-                    {t(`genres.${genre}.name`)}
-                  </h3>
-                  <p className={cn("mt-1 text-xs font-semibold tracking-wide uppercase", accent)}>
-                    {t(`genres.${genre}.region`)}
+                <div className="grid grid-cols-[2.5rem_1fr] items-baseline gap-x-5 gap-y-2 transition-transform duration-300 ease-out group-hover:translate-x-3 sm:grid-cols-[3rem_16rem_1fr] sm:items-center">
+                  <span
+                    className={cn(
+                      "font-heading text-2xl font-bold tabular-nums opacity-60 transition-opacity duration-300 group-hover:opacity-100 sm:text-3xl",
+                      accent.text,
+                    )}
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  <div>
+                    <h3 className="text-xl font-bold tracking-tight sm:text-2xl">
+                      {t(`genres.${genre}.name`)}
+                    </h3>
+                    <p
+                      className={cn(
+                        "mt-1 text-xs font-semibold tracking-wide uppercase",
+                        accent.text,
+                      )}
+                    >
+                      {t(`genres.${genre}.region`)}
+                    </p>
+                  </div>
+
+                  <p className="col-span-2 text-sm text-muted-foreground sm:col-span-1 sm:border-l sm:border-border sm:pl-6">
+                    {t(`genres.${genre}.description`)}
                   </p>
                 </div>
-
-                <p className="col-span-2 text-sm text-muted-foreground sm:col-span-1 sm:border-l sm:border-border sm:pl-6">
-                  {t(`genres.${genre}.description`)}
-                </p>
               </div>
             </StaggerItem>
           );
