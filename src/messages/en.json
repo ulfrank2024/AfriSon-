@@ -117,7 +117,10 @@
     "cta": "Get notified about upcoming events",
     "pageDescription": "No event is publicly scheduled yet: the first concerts and seminars will be announced here once the calendar opens, with cities and dates.",
     "typeConcerts": { "title": "Concerts", "description": "From local stages to bigger pan-African gatherings." },
-    "typeSeminars": { "title": "Seminars", "description": "Masterclasses and workshops with teachers from across the continent." }
+    "typeSeminars": { "title": "Seminars", "description": "Masterclasses and workshops with teachers from across the continent." },
+    "notifyTitle": "Be among the first to know",
+    "notifyDescription": "Create your student account now: you'll be notified right from your dashboard as soon as an event opens near you.",
+    "notifyCta": "Create an account"
   },
   "blog": {
     "eyebrow": "The mag",

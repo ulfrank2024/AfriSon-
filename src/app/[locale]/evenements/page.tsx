@@ -1,9 +1,13 @@
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
-import { Mic2, Users } from "lucide-react";
+import { Mic2, Users, Bell } from "lucide-react";
 import { SiteHeader } from "@/components/marketing/site-header";
 import { SiteFooter } from "@/components/marketing/site-footer";
 import { IconBadge } from "@/components/marketing/icon-badge";
+import { Reveal } from "@/components/motion/reveal";
+import { StaggerGroup, StaggerItem } from "@/components/motion/stagger-group";
+import { Link } from "@/i18n/navigation";
+import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardHeader,
@@ -12,8 +16,8 @@ import {
 } from "@/components/ui/card";
 
 const TYPES = [
-  { key: "typeConcerts", icon: Mic2 },
-  { key: "typeSeminars", icon: Users },
+  { key: "typeConcerts", icon: Mic2, image: "/images/traditional-dance.jpg" },
+  { key: "typeSeminars", icon: Users, image: "/images/lecture-hall.jpg" },
 ] as const;
 
 export default async function EvenementsPage() {
@@ -46,19 +50,48 @@ export default async function EvenementsPage() {
         </section>
 
         <section className="mx-auto max-w-3xl px-4 py-16">
-          <p className="text-lg text-muted-foreground">{t("pageDescription")}</p>
+          <Reveal>
+            <p className="text-lg text-muted-foreground">{t("pageDescription")}</p>
+          </Reveal>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2">
+          <StaggerGroup className="mt-10 grid gap-6 sm:grid-cols-2">
             {TYPES.map((type) => (
-              <Card key={type.key}>
-                <CardHeader>
-                  <IconBadge icon={type.icon} className="mb-2" />
-                  <CardTitle>{t(`${type.key}.title`)}</CardTitle>
-                  <CardDescription>{t(`${type.key}.description`)}</CardDescription>
-                </CardHeader>
-              </Card>
+              <StaggerItem key={type.key}>
+                <Card className="group h-full gap-0 overflow-hidden py-0 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                  <div className="relative h-40 w-full overflow-hidden">
+                    <Image
+                      src={type.image}
+                      alt=""
+                      fill
+                      sizes="(min-width: 640px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <IconBadge
+                      icon={type.icon}
+                      className="absolute -bottom-5 left-4 border-4 border-card bg-primary text-primary-foreground"
+                    />
+                  </div>
+                  <CardHeader className="pt-8 pb-6">
+                    <CardTitle>{t(`${type.key}.title`)}</CardTitle>
+                    <CardDescription>{t(`${type.key}.description`)}</CardDescription>
+                  </CardHeader>
+                </Card>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGroup>
+
+          <Reveal className="mt-14 rounded-2xl border border-border bg-muted/40 p-8 text-center sm:p-10">
+            <IconBadge icon={Bell} className="mx-auto" />
+            <h2 className="mt-4 text-xl font-bold tracking-tight">
+              {t("notifyTitle")}
+            </h2>
+            <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
+              {t("notifyDescription")}
+            </p>
+            <Link href="/signup" className={buttonVariants({ size: "lg", className: "mt-6" })}>
+              {t("notifyCta")}
+            </Link>
+          </Reveal>
         </section>
       </main>
       <SiteFooter />

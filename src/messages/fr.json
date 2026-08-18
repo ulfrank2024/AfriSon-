@@ -117,7 +117,10 @@
     "cta": "Être informé des prochains événements",
     "pageDescription": "Aucun événement n'est encore programmé publiquement : les premiers concerts et séminaires seront annoncés ici dès que le calendrier s'ouvrira, avec les villes et dates concernées.",
     "typeConcerts": { "title": "Concerts", "description": "Des scènes locales aux grands rendez-vous panafricains." },
-    "typeSeminars": { "title": "Séminaires", "description": "Masterclasses et ateliers avec des enseignants du continent." }
+    "typeSeminars": { "title": "Séminaires", "description": "Masterclasses et ateliers avec des enseignants du continent." },
+    "notifyTitle": "Sois parmi les premiers informés",
+    "notifyDescription": "Crée ton compte élève dès maintenant : tu seras prévenu directement depuis ton espace dès qu'un événement s'ouvre près de chez toi.",
+    "notifyCta": "Créer un compte"
   },
   "blog": {
     "eyebrow": "Le mag",
