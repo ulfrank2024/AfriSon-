@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { GraduationCap, Presentation, LayoutDashboard } from "lucide-react";
+import { GraduationCap, Presentation } from "lucide-react";
 import {
   Card,
   CardHeader,
@@ -13,7 +13,6 @@ import { StaggerGroup, StaggerItem } from "@/components/motion/stagger-group";
 const SPACES = [
   { key: "student", icon: GraduationCap },
   { key: "teacher", icon: Presentation },
-  { key: "promoter", icon: LayoutDashboard },
 ] as const;
 
 export function ConceptSection() {
@@ -27,7 +26,7 @@ export function ConceptSection() {
         </h2>
       </Reveal>
 
-      <StaggerGroup className="mt-12 grid gap-6 sm:grid-cols-3">
+      <StaggerGroup className="mx-auto mt-12 grid max-w-2xl gap-6 sm:grid-cols-2">
         {SPACES.map((space) => (
           <StaggerItem key={space.key}>
             <Card>

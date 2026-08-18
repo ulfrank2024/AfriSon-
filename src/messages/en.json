@@ -29,7 +29,7 @@
     }
   },
   "concept": {
-    "title": "Three spaces, one goal",
+    "title": "Two spaces, one goal",
     "student": {
       "title": "Student space",
       "description": "Choose your path, learn at your own pace with video lessons and live sessions, track your progress."
@@ -37,10 +37,6 @@
     "teacher": {
       "title": "Teacher space",
       "description": "Create your courses, host live sessions, track your students and your earnings."
-    },
-    "promoter": {
-      "title": "Promoter space",
-      "description": "Run the platform, approve teachers, organize events, and track growth."
     }
   },
   "instruments": {

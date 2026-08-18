@@ -29,7 +29,7 @@
     }
   },
   "concept": {
-    "title": "Trois espaces, un seul objectif",
+    "title": "Deux espaces, un seul objectif",
     "student": {
       "title": "Espace élève",
       "description": "Choisis ton parcours, apprends à ton rythme avec des cours vidéo et du live, suis ta progression."
@@ -37,10 +37,6 @@
     "teacher": {
       "title": "Espace enseignant",
       "description": "Crée tes cours, anime des sessions en direct, suis tes élèves et tes revenus."
-    },
-    "promoter": {
-      "title": "Espace promoteur",
-      "description": "Pilote la plateforme, valide les enseignants, organise les événements et suis la croissance."
     }
   },
   "instruments": {
