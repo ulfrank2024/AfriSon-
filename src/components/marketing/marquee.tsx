@@ -6,9 +6,9 @@ import type { ReactNode } from "react";
 export function Marquee({ children }: { children: ReactNode }) {
   return (
     <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
-      <div className="flex w-max gap-3 animate-marquee">
+      <div className="flex w-max items-center gap-4 py-2 animate-marquee">
         {children}
-        <div aria-hidden className="flex gap-3">
+        <div aria-hidden className="flex items-center gap-4">
           {children}
         </div>
       </div>
