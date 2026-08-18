@@ -1,18 +1,13 @@
 import { useTranslations } from "next-intl";
 import { Music2 } from "lucide-react";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "@/components/ui/card";
-import { IconBadge } from "./icon-badge";
 import { Marquee } from "./marquee";
 import { Reveal } from "@/components/motion/reveal";
 import { StaggerGroup, StaggerItem } from "@/components/motion/stagger-group";
 import { cn } from "@/lib/utils";
 
 const GENRES = ["makossa", "afrobeat", "rumba", "mbalax", "amapiano", "rai"] as const;
+
+const ACCENTS = ["text-primary", "text-chart-2", "text-chart-3", "text-accent-foreground"];
 
 const PILL_STYLES = [
   "border-primary/20 bg-primary/10 text-primary",
@@ -35,21 +30,37 @@ export function RhythmsSection() {
         <p className="mt-4 text-lg text-muted-foreground">{t("description")}</p>
       </Reveal>
 
-      <StaggerGroup className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {GENRES.map((genre) => (
-          <StaggerItem key={genre}>
-            <Card className="h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-              <CardHeader>
-                <IconBadge icon={Music2} className="mb-2" />
-                <CardTitle>{t(`genres.${genre}.name`)}</CardTitle>
-                <p className="text-xs font-medium text-primary">
-                  {t(`genres.${genre}.region`)}
+      <StaggerGroup className="mt-14 border-y border-border">
+        {GENRES.map((genre, index) => {
+          const accent = ACCENTS[index % ACCENTS.length];
+          return (
+            <StaggerItem key={genre}>
+              <div className="group grid grid-cols-[2.5rem_1fr] items-baseline gap-x-5 gap-y-2 border-b border-border px-2 py-7 transition-colors last:border-b-0 hover:bg-muted/40 sm:grid-cols-[3rem_16rem_1fr] sm:items-center">
+                <span
+                  className={cn(
+                    "font-heading text-2xl font-bold tabular-nums opacity-60 transition-opacity group-hover:opacity-100 sm:text-3xl",
+                    accent,
+                  )}
+                >
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                <div>
+                  <h3 className="text-xl font-bold tracking-tight sm:text-2xl">
+                    {t(`genres.${genre}.name`)}
+                  </h3>
+                  <p className={cn("mt-1 text-xs font-semibold tracking-wide uppercase", accent)}>
+                    {t(`genres.${genre}.region`)}
+                  </p>
+                </div>
+
+                <p className="col-span-2 text-sm text-muted-foreground sm:col-span-1 sm:border-l sm:border-border sm:pl-6">
+                  {t(`genres.${genre}.description`)}
                 </p>
-                <CardDescription>{t(`genres.${genre}.description`)}</CardDescription>
-              </CardHeader>
-            </Card>
-          </StaggerItem>
-        ))}
+              </div>
+            </StaggerItem>
+          );
+        })}
       </StaggerGroup>
 
       <Reveal className="mt-16">
