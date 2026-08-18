@@ -51,9 +51,6 @@ export function SiteFooter() {
             <FooterHeading>{t("navigation")}</FooterHeading>
             <ul className="mt-4 space-y-2.5 text-sm text-muted-foreground">
               <li>
-                <FooterLink href="/#concept">{nav("concept")}</FooterLink>
-              </li>
-              <li>
                 <FooterLink href="/#instruments">{nav("instruments")}</FooterLink>
               </li>
               <li>
@@ -66,7 +63,7 @@ export function SiteFooter() {
                 <FooterLink href="/blog">{nav("blog")}</FooterLink>
               </li>
               <li>
-                <FooterLink href="/#become-teacher">{nav("becomeTeacher")}</FooterLink>
+                <FooterLink href="/carriere">{nav("careers")}</FooterLink>
               </li>
             </ul>
           </div>

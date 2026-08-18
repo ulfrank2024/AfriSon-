@@ -54,7 +54,7 @@ export function HeroSection() {
                   {t("ctaStudent")}
                 </Link>
                 <Link
-                  href="/devenir-enseignant"
+                  href="/carriere"
                   className={buttonVariants({ size: "lg", variant: "outline" })}
                 >
                   {t("ctaTeacher")}

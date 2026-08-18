@@ -1,11 +1,10 @@
 {
   "nav": {
-    "concept": "Le concept",
     "instruments": "Instruments",
     "howItWorks": "Comment ça marche",
     "events": "Événements",
     "blog": "Blog",
-    "becomeTeacher": "Devenir enseignant",
+    "careers": "Carrières",
     "login": "Se connecter",
     "signup": "Créer un compte"
   },
@@ -26,17 +25,6 @@
       "instrument": "Piano · Niveau intermédiaire",
       "progress": "Progression du module",
       "community": "40+ enseignants actifs"
-    }
-  },
-  "concept": {
-    "title": "Deux espaces, un seul objectif",
-    "student": {
-      "title": "Espace élève",
-      "description": "Choisis ton parcours, apprends à ton rythme avec des cours vidéo et du live, suis ta progression."
-    },
-    "teacher": {
-      "title": "Espace enseignant",
-      "description": "Crée tes cours, anime des sessions en direct, suis tes élèves et tes revenus."
     }
   },
   "instruments": {
@@ -124,10 +112,22 @@
       }
     }
   },
-  "teacherRecruitment": {
-    "title": "Deviens enseignant sur AfriSon Academy",
+  "careers": {
+    "eyebrow": "Carrières",
+    "title": "Rejoins l'équipe pédagogique d'AfriSon Academy",
     "description": "Partage ton savoir-faire, touche des élèves partout en Afrique et au-delà, et sois rémunéré équitablement.",
-    "cta": "Devenir enseignant"
+    "openPositions": "Postes ouverts",
+    "apply": "Postuler",
+    "positions": {
+      "music": {
+        "title": "Professeur de musique",
+        "description": "Instrument traditionnel africain ou moderne (piano, guitare, saxophone, batterie). Tu conçois tes cours et animes des sessions en direct avec tes élèves."
+      },
+      "sound": {
+        "title": "Formateur ingénierie du son",
+        "description": "Prise de son, mixage, mastering : tu formes la prochaine génération d'ingénieurs du son à travers des modules vidéo et du live."
+      }
+    }
   },
   "footer": {
     "tagline": "Plateforme panafricaine d'apprentissage musical et d'ingénierie du son.",

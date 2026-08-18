@@ -11,12 +11,11 @@ import { PatternStrip } from "./pattern-strip";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
-  { href: "/#concept", labelKey: "concept" },
   { href: "/#instruments", labelKey: "instruments" },
   { href: "/#how-it-works", labelKey: "howItWorks" },
   { href: "/evenements", labelKey: "events" },
   { href: "/blog", labelKey: "blog" },
-  { href: "/#become-teacher", labelKey: "becomeTeacher" },
+  { href: "/carriere", labelKey: "careers" },
 ] as const;
 
 function NavLink({ href, children }: { href: string; children: React.ReactNode }) {

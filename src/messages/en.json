@@ -1,11 +1,10 @@
 {
   "nav": {
-    "concept": "The concept",
     "instruments": "Instruments",
     "howItWorks": "How it works",
     "events": "Events",
     "blog": "Blog",
-    "becomeTeacher": "Become a teacher",
+    "careers": "Careers",
     "login": "Log in",
     "signup": "Create an account"
   },
@@ -26,17 +25,6 @@
       "instrument": "Piano · Intermediate level",
       "progress": "Module progress",
       "community": "40+ active teachers"
-    }
-  },
-  "concept": {
-    "title": "Two spaces, one goal",
-    "student": {
-      "title": "Student space",
-      "description": "Choose your path, learn at your own pace with video lessons and live sessions, track your progress."
-    },
-    "teacher": {
-      "title": "Teacher space",
-      "description": "Create your courses, host live sessions, track your students and your earnings."
     }
   },
   "instruments": {
@@ -124,10 +112,22 @@
       }
     }
   },
-  "teacherRecruitment": {
-    "title": "Become a teacher on AfriSon Academy",
+  "careers": {
+    "eyebrow": "Careers",
+    "title": "Join AfriSon Academy's teaching team",
     "description": "Share your expertise, reach students across Africa and beyond, and get paid fairly.",
-    "cta": "Become a teacher"
+    "openPositions": "Open positions",
+    "apply": "Apply",
+    "positions": {
+      "music": {
+        "title": "Music teacher",
+        "description": "Traditional African or modern instrument (piano, guitar, saxophone, drums). You design your courses and host live sessions with your students."
+      },
+      "sound": {
+        "title": "Sound engineering trainer",
+        "description": "Recording, mixing, mastering: you train the next generation of sound engineers through video modules and live sessions."
+      }
+    }
   },
   "footer": {
     "tagline": "Pan-African platform for music learning and sound engineering.",
