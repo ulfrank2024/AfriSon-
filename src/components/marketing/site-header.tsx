@@ -3,8 +3,18 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
+import { Menu } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetHeader,
+  SheetFooter,
+  SheetTitle,
+  SheetClose,
+} from "@/components/ui/sheet";
 import { LocaleSwitcher } from "./locale-switcher";
 import { LogoMark } from "./logo-mark";
 import { PatternStrip } from "./pattern-strip";
@@ -30,6 +40,7 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
 export function SiteHeader() {
   const t = useTranslations("nav");
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -67,7 +78,7 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="hidden items-center gap-3 lg:flex">
           <LocaleSwitcher />
           <Link href="/login" className={buttonVariants({ variant: "ghost", size: "sm" })}>
             {t("login")}
@@ -76,6 +87,56 @@ export function SiteHeader() {
             {t("signup")}
           </Link>
         </div>
+
+        <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
+          <SheetTrigger
+            render={<Button variant="ghost" size="icon" className="lg:hidden" />}
+          >
+            <Menu className="size-5" />
+            <span className="sr-only">Menu</span>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-full sm:max-w-xs">
+            <SheetHeader>
+              <SheetTitle className="flex items-center gap-2 text-base">
+                <LogoMark className="size-7" />
+                AfriSon Academy
+              </SheetTitle>
+            </SheetHeader>
+
+            <nav className="flex flex-col gap-1 px-2">
+              {NAV_ITEMS.map((item) => (
+                <SheetClose
+                  key={item.href}
+                  nativeButton={false}
+                  render={<Link href={item.href} />}
+                >
+                  <span className="block rounded-lg px-3 py-2.5 text-base font-medium text-foreground transition-colors hover:bg-muted">
+                    {t(item.labelKey)}
+                  </span>
+                </SheetClose>
+              ))}
+            </nav>
+
+            <SheetFooter className="mt-auto gap-3 border-t">
+              <div className="flex items-center justify-between px-1">
+                <span className="text-sm text-muted-foreground">FR / EN</span>
+                <LocaleSwitcher />
+              </div>
+              <SheetClose
+                nativeButton={false}
+                render={<Link href="/login" className={buttonVariants({ variant: "outline" })} />}
+              >
+                {t("login")}
+              </SheetClose>
+              <SheetClose
+                nativeButton={false}
+                render={<Link href="/signup" className={buttonVariants()} />}
+              >
+                {t("signup")}
+              </SheetClose>
+            </SheetFooter>
+          </SheetContent>
+        </Sheet>
       </header>
       <PatternStrip />
     </motion.div>
