@@ -110,6 +110,25 @@
     "seminars": { "title": "Séminaires panafricains", "description": "Masterclasses et rencontres entre élèves et enseignants de tout le continent." },
     "churches": { "title": "Partenariats avec les églises", "description": "Formation des équipes musicales et techniques des communautés partenaires." }
   },
+  "studioPartners": {
+    "eyebrow": "Studios partenaires",
+    "title": "Un réseau de studios en construction",
+    "description": "Nous nouons des partenariats avec des studios d'enregistrement locaux pour donner à nos élèves et enseignants un accès à du matériel professionnel, au-delà des cours en ligne.",
+    "features": {
+      "gear": { "title": "Matériel professionnel", "description": "Consoles de mixage, cabines d'enregistrement et instruments sur place." },
+      "live": { "title": "Sessions encadrées", "description": "Cours en direct et masterclasses organisés directement en studio." },
+      "recording": { "title": "Enregistrements de qualité", "description": "Un espace pour capturer et produire tes propres créations." }
+    },
+    "citiesTitle": "Déploiement en cours",
+    "cities": {
+      "douala": "Douala",
+      "yaounde": "Yaoundé"
+    },
+    "citiesStatus": "Bientôt",
+    "ctaTitle": "Tu gères un studio ?",
+    "ctaDescription": "Rejoins le réseau de studios partenaires AfriSon Academy.",
+    "cta": "Devenir partenaire"
+  },
   "eventsPromo": {
     "eyebrow": "Événements",
     "title": "Bientôt : concerts, séminaires et rencontres panafricaines",

@@ -110,6 +110,25 @@
     "seminars": { "title": "Pan-African seminars", "description": "Masterclasses and meetups between students and teachers from across the continent." },
     "churches": { "title": "Church partnerships", "description": "Training music and technical teams for partner communities." }
   },
+  "studioPartners": {
+    "eyebrow": "Studio partners",
+    "title": "A partner studio network in the making",
+    "description": "We're building partnerships with local recording studios to give our students and teachers access to professional gear, beyond online lessons.",
+    "features": {
+      "gear": { "title": "Professional gear", "description": "Mixing consoles, recording booths, and instruments on site." },
+      "live": { "title": "Guided sessions", "description": "Live classes and masterclasses hosted directly in the studio." },
+      "recording": { "title": "Quality recordings", "description": "A space to capture and produce your own creations." }
+    },
+    "citiesTitle": "Rolling out now",
+    "cities": {
+      "douala": "Douala",
+      "yaounde": "Yaoundé"
+    },
+    "citiesStatus": "Coming soon",
+    "ctaTitle": "Do you run a studio?",
+    "ctaDescription": "Join the AfriSon Academy partner studio network.",
+    "cta": "Become a partner"
+  },
   "eventsPromo": {
     "eyebrow": "Events",
     "title": "Coming soon: concerts, seminars, and pan-African meetups",

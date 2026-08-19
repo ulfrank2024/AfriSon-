@@ -6,6 +6,7 @@ import { RhythmsSection } from "@/components/marketing/rhythms-section";
 import { HowItWorksSection } from "@/components/marketing/how-it-works-section";
 import { CommunitySection } from "@/components/marketing/community-section";
 import { EventsPromoSection } from "@/components/marketing/events-promo-section";
+import { StudioPartnersSection } from "@/components/marketing/studio-partners-section";
 import { BlogSection } from "@/components/marketing/blog-section";
 import { SiteFooter } from "@/components/marketing/site-footer";
 
@@ -23,6 +24,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
         <HowItWorksSection />
         <CommunitySection />
         <EventsPromoSection />
+        <StudioPartnersSection />
         <BlogSection />
       </main>
       <SiteFooter />
