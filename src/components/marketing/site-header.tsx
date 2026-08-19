@@ -119,7 +119,7 @@ export function SiteHeader() {
 
             <SheetFooter className="mt-auto gap-3 border-t">
               <div className="flex items-center justify-between px-1">
-                <span className="text-sm text-muted-foreground">FR / EN</span>
+                <span className="text-sm text-muted-foreground">{t("language")}</span>
                 <LocaleSwitcher />
               </div>
               <SheetClose
