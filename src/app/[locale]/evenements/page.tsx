@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/card";
 
 const TYPES = [
-  { key: "typeConcerts", icon: Mic2, image: "/images/traditional-dance.jpg" },
+  { key: "typeConcerts", icon: Mic2, image: "/images/band-concert.jpg" },
   { key: "typeSeminars", icon: Users, image: "/images/lecture-hall.jpg" },
 ] as const;
 
@@ -29,7 +29,7 @@ export default async function EvenementsPage() {
       <main>
         <section className="relative overflow-hidden">
           <Image
-            src="/images/concert-crowd.jpg"
+            src="/images/stage-crowd.jpg"
             alt=""
             width={1600}
             height={800}

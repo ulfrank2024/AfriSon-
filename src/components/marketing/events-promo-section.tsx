@@ -13,7 +13,7 @@ export function EventsPromoSection() {
       <Reveal>
         <div className="relative overflow-hidden rounded-2xl">
           <Image
-            src="/images/concert-crowd.jpg"
+            src="/images/stage-crowd.jpg"
             alt=""
             width={1200}
             height={800}
