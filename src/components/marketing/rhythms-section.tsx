@@ -7,6 +7,15 @@ import { cn } from "@/lib/utils";
 
 const GENRES = ["makossa", "afrobeat", "rumba", "mbalax", "amapiano", "rai"] as const;
 
+const FLAGS: Record<(typeof GENRES)[number], string> = {
+  makossa: "🇨🇲",
+  afrobeat: "🇳🇬",
+  rumba: "🇨🇩",
+  mbalax: "🇸🇳",
+  amapiano: "🇿🇦",
+  rai: "🇩🇿",
+};
+
 const ACCENTS = [
   { text: "text-primary", bar: "bg-primary" },
   { text: "text-chart-2", bar: "bg-chart-2" },
@@ -65,10 +74,13 @@ export function RhythmsSection() {
                     </h3>
                     <p
                       className={cn(
-                        "mt-1 text-xs font-semibold tracking-wide uppercase",
+                        "mt-1 flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase",
                         accent.text,
                       )}
                     >
+                      <span aria-hidden className="text-sm not-italic">
+                        {FLAGS[genre]}
+                      </span>
                       {t(`genres.${genre}.region`)}
                     </p>
                   </div>
