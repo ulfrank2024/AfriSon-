@@ -17,7 +17,7 @@ import {
 
 const TYPES = [
   { key: "typeConcerts", icon: Mic2, image: "/images/band-concert.jpg" },
-  { key: "typeSeminars", icon: Users, image: "/images/lecture-hall.jpg" },
+  { key: "typeSeminars", icon: Users, image: "/images/stage-instruments.jpg" },
 ] as const;
 
 export default async function EvenementsPage() {
