@@ -265,10 +265,44 @@
     "admin": {
       "title": "Admin space",
       "welcome": "Welcome!",
-      "overview": { "title": "Overview", "description": "Students, teachers, revenue by country." },
-      "applications": { "title": "Teacher applications", "description": "Queue of applications to review." },
-      "subscriptions": { "title": "Subscriptions & payments", "description": "Consolidated financial view." },
-      "events": { "title": "Events & partnerships", "description": "Concerts, seminars, institutional partners." }
+      "stats": {
+        "students": "Students",
+        "teachers": "Teachers",
+        "countries": "Countries covered",
+        "pendingApplications": "Pending applications"
+      },
+      "applications": { "title": "Teacher applications", "description": "Queue of applications to review.", "viewAll": "View all applications" },
+      "subscriptions": { "title": "Subscriptions & payments", "description": "Coming soon — arrives with the Flutterwave payment module." },
+      "events": { "title": "Events & partnerships", "description": "Coming soon — phase 2 of the roadmap." }
+    }
+  },
+  "adminApplications": {
+    "title": "Teacher applications",
+    "back": "Back to dashboard",
+    "empty": "No applications for this filter.",
+    "filterAll": "All",
+    "submittedOn": "Application received on",
+    "linkedNote": "A student account exists with this email: it will be promoted to teacher on save if the status is \"Validated\".",
+    "fields": {
+      "field": "Field",
+      "fieldMusic": "Music",
+      "fieldSound": "Sound engineering",
+      "teachingLanguages": "Teaching languages",
+      "motivation": "Motivation",
+      "status": "Status",
+      "notes": "Internal notes",
+      "notesPlaceholder": "Observations, notes for the team...",
+      "save": "Save"
+    },
+    "statuses": {
+      "recu": "Received",
+      "en_revue": "In review",
+      "preselectionne": "Shortlisted",
+      "evaluation_planifiee": "Evaluation scheduled",
+      "entretien": "Interview",
+      "valide": "Validated",
+      "rejete": "Rejected",
+      "en_attente_documents": "Awaiting documents"
     }
   }
 }

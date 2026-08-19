@@ -265,10 +265,44 @@
     "admin": {
       "title": "Espace administrateur",
       "welcome": "Bienvenue !",
-      "overview": { "title": "Vue d'ensemble", "description": "Élèves, enseignants, chiffre d'affaires par pays." },
-      "applications": { "title": "Candidatures enseignant", "description": "File de candidatures à traiter." },
-      "subscriptions": { "title": "Abonnements & paiements", "description": "Vue financière consolidée." },
-      "events": { "title": "Événements & partenariats", "description": "Concerts, séminaires, partenaires institutionnels." }
+      "stats": {
+        "students": "Élèves",
+        "teachers": "Enseignants",
+        "countries": "Pays couverts",
+        "pendingApplications": "Candidatures en attente"
+      },
+      "applications": { "title": "Candidatures enseignant", "description": "File de candidatures à traiter.", "viewAll": "Voir toutes les candidatures" },
+      "subscriptions": { "title": "Abonnements & paiements", "description": "Bientôt disponible — arrive avec le module de paiement Flutterwave." },
+      "events": { "title": "Événements & partenariats", "description": "Bientôt disponible — phase 2 de la feuille de route." }
+    }
+  },
+  "adminApplications": {
+    "title": "Candidatures enseignant",
+    "back": "Retour au tableau de bord",
+    "empty": "Aucune candidature pour ce filtre.",
+    "filterAll": "Toutes",
+    "submittedOn": "Candidature reçue le",
+    "linkedNote": "Un compte élève existe avec cet email : il sera promu enseignant à l'enregistrement si le statut est \"Validé\".",
+    "fields": {
+      "field": "Filière",
+      "fieldMusic": "Musique",
+      "fieldSound": "Ingénierie du son",
+      "teachingLanguages": "Langues d'enseignement",
+      "motivation": "Motivation",
+      "status": "Statut",
+      "notes": "Notes internes",
+      "notesPlaceholder": "Observations, remarques pour l'équipe...",
+      "save": "Enregistrer"
+    },
+    "statuses": {
+      "recu": "Reçu",
+      "en_revue": "En revue",
+      "preselectionne": "Présélectionné",
+      "evaluation_planifiee": "Évaluation planifiée",
+      "entretien": "Entretien",
+      "valide": "Validé",
+      "rejete": "Rejeté",
+      "en_attente_documents": "En attente de documents"
     }
   }
 }
