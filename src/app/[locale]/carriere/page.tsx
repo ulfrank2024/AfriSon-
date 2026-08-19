@@ -40,7 +40,7 @@ export default async function CarrierePage() {
       <main>
         <section className="relative overflow-hidden">
           <Image
-            src="/images/teacher-classroom.jpg"
+            src="/images/teacher-tablet-guitar.jpg"
             alt=""
             width={1600}
             height={800}
