@@ -12,7 +12,11 @@ export default async function EnseignantDashboardPage() {
       title={t("title")}
       welcome={appUser ? `${t("welcome")} ${appUser.fullName}` : t("welcome")}
       cards={[
-        { title: t("courses.title"), description: t("courses.description") },
+        {
+          title: t("courses.title"),
+          description: t("courses.description"),
+          href: "/enseignant/cours",
+        },
         { title: t("students.title"), description: t("students.description") },
         { title: t("earnings.title"), description: t("earnings.description") },
         { title: t("live.title"), description: t("live.description") },

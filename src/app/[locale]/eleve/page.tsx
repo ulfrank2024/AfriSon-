@@ -12,8 +12,12 @@ export default async function EleveDashboardPage() {
       title={t("title")}
       welcome={appUser ? `${t("welcome")} ${appUser.fullName}` : t("welcome")}
       cards={[
+        {
+          title: t("courses.title"),
+          description: t("courses.description"),
+          href: "/eleve/cours",
+        },
         { title: t("subscription.title"), description: t("subscription.description") },
-        { title: t("courses.title"), description: t("courses.description") },
         { title: t("community.title"), description: t("community.description") },
         { title: t("referral.title"), description: t("referral.description") },
       ]}

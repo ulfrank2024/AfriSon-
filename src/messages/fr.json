@@ -324,5 +324,80 @@
       "rejete": "Rejeté",
       "en_attente_documents": "En attente de documents"
     }
+  },
+  "teacherCourses": {
+    "back": "Retour au tableau de bord",
+    "title": "Mes cours",
+    "newCourse": "Créer un cours",
+    "empty": "Tu n'as pas encore créé de cours.",
+    "lessonCount": "{count, plural, =0 {Aucune leçon} one {# leçon} other {# leçons}}",
+    "published": "Publié",
+    "draft": "Brouillon",
+    "draftNote": "Ce cours est en brouillon : il n'apparaît pas encore dans le catalogue élève. Publie-le quand il est prêt.",
+    "lessons": "Leçons",
+    "noLessons": "Aucune leçon pour l'instant.",
+    "addLesson": "Ajouter une leçon",
+    "publish": "Publier",
+    "unpublish": "Dépublier",
+    "levels": {
+      "debutant": "Débutant",
+      "intermediaire": "Intermédiaire",
+      "avance": "Avancé"
+    },
+    "teachingLanguages": {
+      "fr": "Français",
+      "en": "Anglais"
+    },
+    "lessonTypes": {
+      "video": "Vidéo",
+      "exercice": "Exercice",
+      "quiz": "Quiz"
+    },
+    "create": {
+      "title": "Créer un cours",
+      "description": "Renseigne les informations de base, tu pourras ajouter les leçons ensuite.",
+      "submit": "Créer le cours",
+      "error": "Une erreur est survenue. Vérifie les champs et réessaie."
+    },
+    "fields": {
+      "title": "Titre du cours",
+      "specialty": "Spécialité",
+      "specialtyPlaceholder": "Ex. Piano, Djembé, Mixage audio...",
+      "level": "Niveau",
+      "teachingLanguage": "Langue d'enseignement",
+      "lessonTitle": "Titre de la leçon",
+      "lessonType": "Type de leçon",
+      "lessonContent": "Contenu",
+      "lessonContentVideo": "Description / lien vidéo",
+      "lessonContentVideoPlaceholder": "Colle ici le lien de la vidéo (YouTube, Vimeo...) en attendant l'hébergement Cloudflare Stream"
+    }
+  },
+  "studentCourses": {
+    "back": "Retour au tableau de bord",
+    "title": "Catalogue de cours",
+    "description": "Filtre par langue d'enseignement et par niveau pour trouver ton cours.",
+    "empty": "Aucun cours ne correspond à ces filtres pour le moment.",
+    "view": "Voir le cours",
+    "byTeacher": "par {name}",
+    "lessons": "Leçons",
+    "noLessons": "Ce cours n'a pas encore de leçon.",
+    "watchLesson": "Regarder la leçon",
+    "filters": {
+      "fr": "En français",
+      "en": "In English"
+    },
+    "levels": {
+      "debutant": "Débutant",
+      "intermediaire": "Intermédiaire",
+      "avance": "Avancé"
+    },
+    "teachingLanguages": {
+      "fr": "Français",
+      "en": "Anglais"
+    },
+    "teachingLanguagesShort": {
+      "fr": "FR",
+      "en": "EN"
+    }
   }
 }

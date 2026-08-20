@@ -324,5 +324,80 @@
       "rejete": "Rejected",
       "en_attente_documents": "Awaiting documents"
     }
+  },
+  "teacherCourses": {
+    "back": "Back to dashboard",
+    "title": "My courses",
+    "newCourse": "Create a course",
+    "empty": "You haven't created any courses yet.",
+    "lessonCount": "{count, plural, =0 {No lessons} one {# lesson} other {# lessons}}",
+    "published": "Published",
+    "draft": "Draft",
+    "draftNote": "This course is a draft: it doesn't appear in the student catalogue yet. Publish it when it's ready.",
+    "lessons": "Lessons",
+    "noLessons": "No lessons yet.",
+    "addLesson": "Add a lesson",
+    "publish": "Publish",
+    "unpublish": "Unpublish",
+    "levels": {
+      "debutant": "Beginner",
+      "intermediaire": "Intermediate",
+      "avance": "Advanced"
+    },
+    "teachingLanguages": {
+      "fr": "French",
+      "en": "English"
+    },
+    "lessonTypes": {
+      "video": "Video",
+      "exercice": "Exercise",
+      "quiz": "Quiz"
+    },
+    "create": {
+      "title": "Create a course",
+      "description": "Fill in the basic info, you'll be able to add lessons afterwards.",
+      "submit": "Create course",
+      "error": "Something went wrong. Check the fields and try again."
+    },
+    "fields": {
+      "title": "Course title",
+      "specialty": "Specialty",
+      "specialtyPlaceholder": "E.g. Piano, Djembe, Audio mixing...",
+      "level": "Level",
+      "teachingLanguage": "Teaching language",
+      "lessonTitle": "Lesson title",
+      "lessonType": "Lesson type",
+      "lessonContent": "Content",
+      "lessonContentVideo": "Description / video link",
+      "lessonContentVideoPlaceholder": "Paste the video link here (YouTube, Vimeo...) until Cloudflare Stream hosting is wired up"
+    }
+  },
+  "studentCourses": {
+    "back": "Back to dashboard",
+    "title": "Course catalogue",
+    "description": "Filter by teaching language and level to find your course.",
+    "empty": "No courses match these filters yet.",
+    "view": "View course",
+    "byTeacher": "by {name}",
+    "lessons": "Lessons",
+    "noLessons": "This course doesn't have any lessons yet.",
+    "watchLesson": "Watch lesson",
+    "filters": {
+      "fr": "In French",
+      "en": "In English"
+    },
+    "levels": {
+      "debutant": "Beginner",
+      "intermediaire": "Intermediate",
+      "avance": "Advanced"
+    },
+    "teachingLanguages": {
+      "fr": "French",
+      "en": "English"
+    },
+    "teachingLanguagesShort": {
+      "fr": "FR",
+      "en": "EN"
+    }
   }
 }

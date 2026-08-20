@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -19,7 +20,7 @@ export function DashboardShell({
   badge: string;
   title: string;
   welcome: string;
-  cards: Array<{ title: string; description: string; icon?: ReactNode }>;
+  cards: Array<{ title: string; description: string; icon?: ReactNode; href?: string }>;
 }) {
   return (
     <div className="mx-auto max-w-5xl px-4 py-12">
@@ -37,16 +38,32 @@ export function DashboardShell({
       </Reveal>
 
       <StaggerGroup className="mt-8 grid gap-4 sm:grid-cols-2">
-        {cards.map((card) => (
-          <StaggerItem key={card.title}>
-            <Card>
-              <CardHeader>
-                <CardTitle>{card.title}</CardTitle>
-                <CardDescription>{card.description}</CardDescription>
-              </CardHeader>
-            </Card>
-          </StaggerItem>
-        ))}
+        {cards.map((card) =>
+          card.href ? (
+            <StaggerItem key={card.title}>
+              <Link href={card.href} className="group block h-full">
+                <Card className="h-full transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
+                  <CardHeader>
+                    <CardTitle className="flex items-center justify-between">
+                      {card.title}
+                      <ArrowRight className="size-4 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-primary" />
+                    </CardTitle>
+                    <CardDescription>{card.description}</CardDescription>
+                  </CardHeader>
+                </Card>
+              </Link>
+            </StaggerItem>
+          ) : (
+            <StaggerItem key={card.title}>
+              <Card className="h-full opacity-70">
+                <CardHeader>
+                  <CardTitle>{card.title}</CardTitle>
+                  <CardDescription>{card.description}</CardDescription>
+                </CardHeader>
+              </Card>
+            </StaggerItem>
+          ),
+        )}
       </StaggerGroup>
     </div>
   );
