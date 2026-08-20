@@ -3,6 +3,7 @@ import { requireUser } from "@/modules/auth/require-user";
 import { getAppUserByClerkId } from "@/modules/auth/get-app-user";
 import { dashboardPathForRole } from "@/modules/auth/types";
 import { OnboardingForm } from "@/modules/auth/onboarding-form";
+import { AuthLayout } from "@/modules/auth/auth-layout";
 
 export const dynamic = "force-dynamic";
 
@@ -17,5 +18,9 @@ export default async function OnboardingPage() {
     redirect(dashboardPathForRole(appUser.role));
   }
 
-  return <OnboardingForm />;
+  return (
+    <AuthLayout>
+      <OnboardingForm />
+    </AuthLayout>
+  );
 }

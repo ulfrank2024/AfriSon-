@@ -2,6 +2,7 @@
 
 import { useActionState } from "react";
 import { useTranslations } from "next-intl";
+import { UserRound } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -18,29 +19,33 @@ export function OnboardingForm() {
   >(completeOnboarding, null);
 
   return (
-    <form action={formAction} className="mx-auto max-w-md space-y-6 px-4 py-24">
-      <div>
-        <h1 className="text-2xl font-bold tracking-tight">{t("title")}</h1>
-        <p className="mt-1 text-sm text-muted-foreground">{t("description")}</p>
-      </div>
+    <div>
+      <span className="flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+        <UserRound className="size-5" strokeWidth={2.25} />
+      </span>
 
-      <div className="space-y-2">
-        <Label htmlFor="fullName">{t("fields.fullName")}</Label>
-        <Input id="fullName" name="fullName" required minLength={2} maxLength={120} />
-      </div>
+      <h1 className="mt-4 text-xl font-bold tracking-tight">{t("title")}</h1>
+      <p className="mt-1 text-sm text-muted-foreground">{t("description")}</p>
 
-      <div className="space-y-2">
-        <Label htmlFor="country">{t("fields.country")}</Label>
-        <Input id="country" name="country" required />
-      </div>
+      <form action={formAction} className="mt-6 space-y-5">
+        <div className="space-y-2">
+          <Label htmlFor="fullName">{t("fields.fullName")}</Label>
+          <Input id="fullName" name="fullName" required minLength={2} maxLength={120} />
+        </div>
 
-      <Button type="submit" size="lg" className="w-full" disabled={isPending}>
-        {t("submit")}
-      </Button>
+        <div className="space-y-2">
+          <Label htmlFor="country">{t("fields.country")}</Label>
+          <Input id="country" name="country" required placeholder={t("fields.countryPlaceholder")} />
+        </div>
 
-      {state?.ok === false && (
-        <p className="text-sm font-medium text-destructive">{t("error")}</p>
-      )}
-    </form>
+        <Button type="submit" size="lg" className="w-full" disabled={isPending}>
+          {t("submit")}
+        </Button>
+
+        {state?.ok === false && (
+          <p className="text-sm font-medium text-destructive">{t("error")}</p>
+        )}
+      </form>
+    </div>
   );
 }

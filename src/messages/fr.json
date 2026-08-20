@@ -250,7 +250,8 @@
     "description": "Encore une étape avant d'accéder à ton espace élève.",
     "fields": {
       "fullName": "Nom complet",
-      "country": "Pays"
+      "country": "Pays",
+      "countryPlaceholder": "Ex. Cameroun"
     },
     "submit": "Continuer",
     "error": "Une erreur est survenue, réessaie dans un instant."
@@ -262,7 +263,8 @@
       "subscription": { "title": "Mon abonnement", "description": "Suis ta formule et son renouvellement." },
       "courses": { "title": "Mes cours", "description": "Reprends tes leçons là où tu les as laissées." },
       "community": { "title": "Communauté & opportunités", "description": "Concerts, séminaires et échanges entre élèves." },
-      "referral": { "title": "Parrainage", "description": "Invite un proche et gagnez tous les deux une récompense." }
+      "referral": { "title": "Parrainage", "description": "Invite un proche et gagnez tous les deux une récompense." },
+      "comingSoon": "Bientôt disponible"
     },
     "enseignant": {
       "title": "Espace enseignant",
@@ -271,7 +273,8 @@
       "students": { "title": "Mes élèves", "description": "Suis la progression de tes élèves inscrits." },
       "earnings": { "title": "Revenus", "description": "Détail de tes revenus et historique des versements." },
       "live": { "title": "Sessions live", "description": "Gère tes créneaux de cours en direct." },
-      "referral": { "title": "Invitation", "description": "Partage ton lien personnel et suis les inscriptions." }
+      "referral": { "title": "Invitation", "description": "Partage ton lien personnel et suis les inscriptions." },
+      "comingSoon": "Bientôt disponible"
     },
     "admin": {
       "title": "Espace administrateur",

@@ -250,7 +250,8 @@
     "description": "One more step before you reach your student space.",
     "fields": {
       "fullName": "Full name",
-      "country": "Country"
+      "country": "Country",
+      "countryPlaceholder": "E.g. Cameroon"
     },
     "submit": "Continue",
     "error": "Something went wrong, please try again shortly."
@@ -262,7 +263,8 @@
       "subscription": { "title": "My subscription", "description": "Track your plan and its renewal." },
       "courses": { "title": "My courses", "description": "Pick up your lessons where you left off." },
       "community": { "title": "Community & opportunities", "description": "Concerts, seminars, and exchanges with other students." },
-      "referral": { "title": "Referral", "description": "Invite someone close and you both get a reward." }
+      "referral": { "title": "Referral", "description": "Invite someone close and you both get a reward." },
+      "comingSoon": "Coming soon"
     },
     "enseignant": {
       "title": "Teacher space",
@@ -271,7 +273,8 @@
       "students": { "title": "My students", "description": "Track the progress of your enrolled students." },
       "earnings": { "title": "Earnings", "description": "Breakdown of your earnings and payout history." },
       "live": { "title": "Live sessions", "description": "Manage your live class slots." },
-      "referral": { "title": "Invitation", "description": "Share your personal link and track sign-ups." }
+      "referral": { "title": "Invitation", "description": "Share your personal link and track sign-ups." },
+      "comingSoon": "Coming soon"
     },
     "admin": {
       "title": "Admin space",
