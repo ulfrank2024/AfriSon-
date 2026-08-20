@@ -215,6 +215,16 @@
     "unavailableTitle": "Connexion bientôt disponible",
     "unavailableDescription": "L'authentification est en cours de configuration. Reviens un peu plus tard pour créer ton compte ou te connecter."
   },
+  "authLayout": {
+    "title": "Apprends la musique africaine, où que tu sois",
+    "tagline": "Rejoins une communauté panafricaine d'élèves et d'enseignants passionnés.",
+    "bullets": {
+      "flexible": "Cours en vidéo à ton rythme, live avec tes enseignants",
+      "verified": "Enseignants vérifiés, instruments traditionnels et modernes",
+      "payment": "Paiement simple en Mobile Money (MTN, Orange)"
+    },
+    "backHome": "Retour à l'accueil"
+  },
   "teacherApplication": {
     "back": "Retour aux carrières",
     "title": "Candidature enseignant",

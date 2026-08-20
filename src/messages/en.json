@@ -215,6 +215,16 @@
     "unavailableTitle": "Sign-in coming soon",
     "unavailableDescription": "Authentication is being set up. Check back shortly to create your account or log in."
   },
+  "authLayout": {
+    "title": "Learn African music, wherever you are",
+    "tagline": "Join a pan-African community of passionate students and teachers.",
+    "bullets": {
+      "flexible": "Video lessons at your own pace, live with your teachers",
+      "verified": "Verified teachers, traditional and modern instruments",
+      "payment": "Simple Mobile Money payment (MTN, Orange)"
+    },
+    "backHome": "Back to home"
+  },
   "teacherApplication": {
     "back": "Back to careers",
     "title": "Teacher application",

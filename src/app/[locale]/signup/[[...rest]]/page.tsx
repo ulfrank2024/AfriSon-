@@ -1,17 +1,23 @@
 import { SignUp } from "@clerk/nextjs";
 import { isClerkConfigured } from "@/modules/auth/config";
 import { AuthUnavailable } from "@/modules/auth/auth-unavailable";
+import { AuthLayout } from "@/modules/auth/auth-layout";
+import { clerkAppearance } from "@/modules/auth/clerk-appearance";
 
 export const dynamic = "force-dynamic";
 
 export default function SignupPage() {
   if (!isClerkConfigured) {
-    return <AuthUnavailable />;
+    return (
+      <AuthLayout>
+        <AuthUnavailable />
+      </AuthLayout>
+    );
   }
 
   return (
-    <div className="flex justify-center px-4 py-16">
-      <SignUp signInUrl="/login" />
-    </div>
+    <AuthLayout>
+      <SignUp signInUrl="/login" appearance={clerkAppearance} />
+    </AuthLayout>
   );
 }
