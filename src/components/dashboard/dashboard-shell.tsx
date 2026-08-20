@@ -24,6 +24,7 @@ export function DashboardShell({
   title,
   welcome,
   bannerImage,
+  bannerStats,
   beforeCards,
   cards,
 }: {
@@ -31,6 +32,7 @@ export function DashboardShell({
   title: string;
   welcome: string;
   bannerImage: { src: string; alt: string };
+  bannerStats?: Array<{ value: number; label: string }>;
   beforeCards?: ReactNode;
   cards: DashboardCard[];
 }) {
@@ -60,11 +62,26 @@ export function DashboardShell({
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
         <div className="absolute inset-0 flex items-end px-4 pb-5 sm:px-8 sm:pb-7">
-          <Reveal onView={false} className="mx-auto w-full max-w-5xl">
-            <Badge variant="secondary">{badge}</Badge>
-            <h1 className="mt-2 text-2xl font-bold tracking-tight text-white">{title}</h1>
-            <p className="mt-1 text-sm text-white/85">{welcome}</p>
-          </Reveal>
+          <div className="mx-auto flex w-full max-w-5xl flex-wrap items-end justify-between gap-4">
+            <Reveal onView={false}>
+              <Badge variant="secondary">{badge}</Badge>
+              <h1 className="mt-2 text-2xl font-bold tracking-tight text-white">{title}</h1>
+              <p className="mt-1 text-sm text-white/85">{welcome}</p>
+            </Reveal>
+
+            {bannerStats && bannerStats.length > 0 && (
+              <Reveal onView={false}>
+                <div className="flex items-stretch divide-x divide-white/20 rounded-xl border border-white/25 bg-black/25 backdrop-blur-sm">
+                  {bannerStats.map((stat) => (
+                    <div key={stat.label} className="px-4 py-2.5 text-center sm:px-5 sm:py-3">
+                      <p className="text-xl font-bold tabular-nums text-white sm:text-2xl">{stat.value}</p>
+                      <p className="mt-0.5 text-[11px] whitespace-nowrap text-white/80">{stat.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </Reveal>
+            )}
+          </div>
         </div>
       </div>
 
