@@ -284,7 +284,16 @@
       },
       "applications": { "title": "Candidatures enseignant", "description": "File de candidatures à traiter.", "viewAll": "Voir toutes les candidatures" },
       "subscriptions": { "title": "Abonnements & paiements", "description": "Bientôt disponible — arrive avec le module de paiement Flutterwave." },
-      "events": { "title": "Événements & partenariats", "description": "Bientôt disponible — phase 2 de la feuille de route." }
+      "events": { "title": "Événements & partenariats", "description": "Bientôt disponible — phase 2 de la feuille de route." },
+      "comingSoon": "Bientôt disponible",
+      "nav": {
+        "overview": "Vue d'ensemble",
+        "applications": "Candidatures enseignant",
+        "subscriptions": "Abonnements & paiements",
+        "events": "Événements & partenariats",
+        "role": "Administrateur",
+        "viewSite": "Voir le site"
+      }
     }
   },
   "adminApplications": {

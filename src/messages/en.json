@@ -284,7 +284,16 @@
       },
       "applications": { "title": "Teacher applications", "description": "Queue of applications to review.", "viewAll": "View all applications" },
       "subscriptions": { "title": "Subscriptions & payments", "description": "Coming soon — arrives with the Flutterwave payment module." },
-      "events": { "title": "Events & partnerships", "description": "Coming soon — phase 2 of the roadmap." }
+      "events": { "title": "Events & partnerships", "description": "Coming soon — phase 2 of the roadmap." },
+      "comingSoon": "Coming soon",
+      "nav": {
+        "overview": "Overview",
+        "applications": "Teacher applications",
+        "subscriptions": "Subscriptions & payments",
+        "events": "Events & partnerships",
+        "role": "Administrator",
+        "viewSite": "View site"
+      }
     }
   },
   "adminApplications": {

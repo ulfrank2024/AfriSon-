@@ -37,7 +37,7 @@ export default async function AdminCandidaturesPage({
   const linkedEmails = new Set(linkedUsers.map((u) => u.email));
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-12">
+    <div className="mx-auto max-w-4xl px-4 py-8 sm:px-8 sm:py-10">
       <Link
         href="/admin"
         className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
