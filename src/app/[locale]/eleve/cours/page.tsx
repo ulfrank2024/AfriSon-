@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { ArrowLeft, ArrowRight, BookOpen } from "lucide-react";
+import { ArrowLeft, ArrowRight, BookOpen, Star } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/badge";
 import { requireAppUser } from "@/modules/auth/require-app-user";
@@ -110,6 +110,12 @@ export default async function StudentCataloguePage({
               <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
                 <Badge variant="secondary">{t(`levels.${course.level}`)}</Badge>
                 <span>{t("byTeacher", { name: course.teacherName })}</span>
+                {course.averageRating !== null && (
+                  <span className="flex items-center gap-0.5">
+                    <Star className="size-3 fill-primary text-primary" />
+                    {course.averageRating.toFixed(1)} ({course.ratingCount})
+                  </span>
+                )}
               </div>
               <span className="mt-4 flex items-center gap-1 text-sm font-medium text-primary">
                 {t("view")}

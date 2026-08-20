@@ -1,9 +1,11 @@
-import { eq, and, asc } from "drizzle-orm";
+import { eq, and, asc, avg, count } from "drizzle-orm";
 import { getDb } from "@/db/client";
-import { courses, lessons, users } from "@/db/schema";
+import { courses, lessons, users, courseRatings, courseLikes } from "@/db/schema";
 
-/** Fetches a course for student viewing — only if it's published. */
-export async function getPublishedCourse(courseId: string) {
+/** Fetches a course for student viewing — only if it's published. When
+ * studentId is provided, also resolves that student's own rating/like
+ * state so the UI can pre-fill the widgets. */
+export async function getPublishedCourse(courseId: string, studentId?: string) {
   const db = getDb();
 
   const [course] = await db
@@ -21,11 +23,34 @@ export async function getPublishedCourse(courseId: string) {
 
   if (!course) return null;
 
-  const courseLessons = await db
-    .select()
-    .from(lessons)
-    .where(eq(lessons.courseId, courseId))
-    .orderBy(asc(lessons.order));
+  const [courseLessons, [ratingAgg], [likeAgg], [myRating], [myLike]] = await Promise.all([
+    db.select().from(lessons).where(eq(lessons.courseId, courseId)).orderBy(asc(lessons.order)),
+    db
+      .select({ average: avg(courseRatings.rating), count: count(courseRatings.id) })
+      .from(courseRatings)
+      .where(eq(courseRatings.courseId, courseId)),
+    db.select({ count: count(courseLikes.id) }).from(courseLikes).where(eq(courseLikes.courseId, courseId)),
+    studentId
+      ? db
+          .select({ rating: courseRatings.rating })
+          .from(courseRatings)
+          .where(and(eq(courseRatings.courseId, courseId), eq(courseRatings.studentId, studentId)))
+      : Promise.resolve([]),
+    studentId
+      ? db
+          .select({ id: courseLikes.id })
+          .from(courseLikes)
+          .where(and(eq(courseLikes.courseId, courseId), eq(courseLikes.studentId, studentId)))
+      : Promise.resolve([]),
+  ]);
 
-  return { course, lessons: courseLessons };
+  return {
+    course,
+    lessons: courseLessons,
+    averageRating: ratingAgg.average ? Number(ratingAgg.average) : null,
+    ratingCount: ratingAgg.count,
+    likeCount: likeAgg.count,
+    myRating: myRating?.rating ?? null,
+    isLiked: Boolean(myLike),
+  };
 }

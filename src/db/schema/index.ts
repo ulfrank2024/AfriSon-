@@ -2,6 +2,7 @@ export * from "./enums";
 export * from "./users";
 export * from "./teacher-applications";
 export * from "./courses";
+export * from "./course-engagement";
 export * from "./subscriptions";
 export * from "./payments";
 export * from "./referrals";

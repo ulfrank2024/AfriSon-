@@ -1,6 +1,6 @@
-import { eq, and, desc, count, type SQL } from "drizzle-orm";
+import { eq, and, desc, count, avg, inArray, type SQL } from "drizzle-orm";
 import { getDb } from "@/db/client";
-import { courses, lessons, users } from "@/db/schema";
+import { courses, lessons, users, courseRatings } from "@/db/schema";
 import type { CourseCatalogueFilters } from "./types";
 
 export async function getCourseCatalogue(filters: CourseCatalogueFilters) {
@@ -14,7 +14,7 @@ export async function getCourseCatalogue(filters: CourseCatalogueFilters) {
     conditions.push(eq(courses.level, filters.level));
   }
 
-  return db
+  const results = await db
     .select({
       id: courses.id,
       title: courses.title,
@@ -30,4 +30,26 @@ export async function getCourseCatalogue(filters: CourseCatalogueFilters) {
     .where(and(...conditions))
     .groupBy(courses.id, users.fullName)
     .orderBy(desc(courses.createdAt));
+
+  if (results.length === 0) return [];
+
+  const ratingRows = await db
+    .select({
+      courseId: courseRatings.courseId,
+      average: avg(courseRatings.rating),
+      count: count(courseRatings.id),
+    })
+    .from(courseRatings)
+    .where(inArray(courseRatings.courseId, results.map((r) => r.id)))
+    .groupBy(courseRatings.courseId);
+
+  const ratingsByCourse = new Map(
+    ratingRows.map((r) => [r.courseId, { average: Number(r.average), count: r.count }]),
+  );
+
+  return results.map((course) => ({
+    ...course,
+    averageRating: ratingsByCourse.get(course.id)?.average ?? null,
+    ratingCount: ratingsByCourse.get(course.id)?.count ?? 0,
+  }));
 }

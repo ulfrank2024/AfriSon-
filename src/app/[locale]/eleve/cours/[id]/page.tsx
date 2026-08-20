@@ -5,6 +5,8 @@ import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/badge";
 import { requireAppUser } from "@/modules/auth/require-app-user";
 import { getPublishedCourse } from "@/modules/cours/get-published-course";
+import { CourseRating } from "@/modules/cours/course-rating";
+import { CourseLikeButton } from "@/modules/cours/course-like-button";
 
 const LESSON_ICONS = { video: Video, exercice: Dumbbell, quiz: HelpCircle } as const;
 
@@ -20,15 +22,15 @@ function isUrl(value: string) {
 export default async function StudentCourseDetailPage({
   params,
 }: PageProps<"/[locale]/eleve/cours/[id]">) {
-  await requireAppUser("eleve");
+  const appUser = await requireAppUser("eleve");
   const t = await getTranslations("studentCourses");
   const { id } = await params;
 
-  const data = await getPublishedCourse(id);
+  const data = await getPublishedCourse(id, appUser?.id);
   if (!data) {
     notFound();
   }
-  const { course, lessons } = data;
+  const { course, lessons, averageRating, ratingCount, likeCount, myRating, isLiked } = data;
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-8 sm:py-10">
@@ -48,6 +50,19 @@ export default async function StudentCourseDetailPage({
         <div className="mt-3 flex gap-2">
           <Badge variant="secondary">{t(`levels.${course.level}`)}</Badge>
           <Badge variant="outline">{t(`teachingLanguages.${course.teachingLanguage}`)}</Badge>
+        </div>
+
+        <div className="mt-5 flex flex-wrap items-end gap-6">
+          <div>
+            <p className="mb-1.5 text-xs font-medium text-muted-foreground">{t("rateThisCourse")}</p>
+            <CourseRating
+              courseId={course.id}
+              averageRating={averageRating}
+              ratingCount={ratingCount}
+              myRating={myRating}
+            />
+          </div>
+          <CourseLikeButton courseId={course.id} likeCount={likeCount} isLiked={isLiked} />
         </div>
       </div>
 

@@ -429,6 +429,11 @@
     "lessons": "Lessons",
     "noLessons": "This course doesn't have any lessons yet.",
     "watchLesson": "Watch lesson",
+    "rateThisCourse": "Rate this course",
+    "yourRating": "Your rating: {rating}/5",
+    "averageRating": "{average}/5 ({count, plural, =0 {no ratings} one {# rating} other {# ratings}})",
+    "noRatingsYet": "No ratings yet",
+    "like": "Like",
     "filters": {
       "fr": "In French",
       "en": "In English"

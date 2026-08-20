@@ -429,6 +429,11 @@
     "lessons": "Leçons",
     "noLessons": "Ce cours n'a pas encore de leçon.",
     "watchLesson": "Regarder la leçon",
+    "rateThisCourse": "Note ce cours",
+    "yourRating": "Ta note : {rating}/5",
+    "averageRating": "{average}/5 ({count, plural, =0 {aucune note} one {# note} other {# notes}})",
+    "noRatingsYet": "Pas encore de note",
+    "like": "J'aime",
     "filters": {
       "fr": "En français",
       "en": "In English"
