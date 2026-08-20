@@ -17,7 +17,7 @@ export async function getPublishedCourse(courseId: string) {
     })
     .from(courses)
     .innerJoin(users, eq(users.id, courses.teacherId))
-    .where(and(eq(courses.id, courseId), eq(courses.isPublished, true)));
+    .where(and(eq(courses.id, courseId), eq(courses.status, "publie")));
 
   if (!course) return null;
 

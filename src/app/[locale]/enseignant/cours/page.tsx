@@ -55,8 +55,8 @@ export default async function TeacherCoursesPage() {
               </div>
               <div className="flex items-center gap-2">
                 <Badge variant="secondary">{t("lessonCount", { count: course.lessonCount })}</Badge>
-                <Badge variant={course.isPublished ? "default" : "outline"}>
-                  {course.isPublished ? t("published") : t("draft")}
+                <Badge variant={course.status === "publie" ? "default" : "outline"}>
+                  {t(`statuses.${course.status}`)}
                 </Badge>
               </div>
             </Link>

@@ -6,7 +6,7 @@ import type { CourseCatalogueFilters } from "./types";
 export async function getCourseCatalogue(filters: CourseCatalogueFilters) {
   const db = getDb();
 
-  const conditions: SQL[] = [eq(courses.isPublished, true)];
+  const conditions: SQL[] = [eq(courses.status, "publie")];
   if (filters.teachingLanguage) {
     conditions.push(eq(courses.teachingLanguage, filters.teachingLanguage));
   }

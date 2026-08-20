@@ -4,7 +4,7 @@ import { ArrowLeft, Video, Dumbbell, HelpCircle } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { requireAppUser } from "@/modules/auth/require-app-user";
 import { getCourseForTeacher } from "@/modules/cours/get-course-for-teacher";
-import { PublishToggleForm } from "@/modules/cours/publish-toggle-form";
+import { CourseStatusActions } from "@/modules/cours/course-status-actions";
 import { LessonForm } from "@/modules/cours/lesson-form";
 import { DeleteLessonForm } from "@/modules/cours/delete-lesson-form";
 
@@ -22,6 +22,7 @@ export default async function TeacherCourseDetailPage({
     notFound();
   }
   const { course, lessons } = data;
+  const canEditLessons = course.status !== "en_revue";
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-8 sm:py-10">
@@ -41,10 +42,10 @@ export default async function TeacherCourseDetailPage({
             {t(`teachingLanguages.${course.teachingLanguage}`)}
           </p>
         </div>
-        <PublishToggleForm courseId={course.id} isPublished={course.isPublished} />
+        <CourseStatusActions courseId={course.id} status={course.status} adminNotes={course.adminNotes} />
       </div>
 
-      {!course.isPublished && (
+      {course.status === "brouillon" && (
         <p className="mt-4 rounded-lg bg-muted px-3 py-2 text-xs text-muted-foreground">
           {t("draftNote")}
         </p>
@@ -74,17 +75,25 @@ export default async function TeacherCourseDetailPage({
                     </p>
                   </div>
                 </div>
-                <DeleteLessonForm lessonId={lesson.id} courseId={course.id} />
+                {canEditLessons && (
+                  <DeleteLessonForm lessonId={lesson.id} courseId={course.id} />
+                )}
               </li>
             );
           })}
         </ul>
       )}
 
-      <h3 className="mt-8 text-sm font-semibold">{t("addLesson")}</h3>
-      <div className="mt-3">
-        <LessonForm courseId={course.id} />
-      </div>
+      {canEditLessons ? (
+        <>
+          <h3 className="mt-8 text-sm font-semibold">{t("addLesson")}</h3>
+          <div className="mt-3">
+            <LessonForm courseId={course.id} />
+          </div>
+        </>
+      ) : (
+        <p className="mt-4 text-xs text-muted-foreground">{t("lockedWhileReview")}</p>
+      )}
     </div>
   );
 }

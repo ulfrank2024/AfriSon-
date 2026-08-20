@@ -30,6 +30,13 @@ export const courseLevelEnum = pgEnum("course_level", [
   "avance",
 ]);
 
+export const courseStatusEnum = pgEnum("course_status", [
+  "brouillon",
+  "en_revue",
+  "publie",
+  "rejete",
+]);
+
 export const lessonTypeEnum = pgEnum("lesson_type", [
   "video",
   "exercice",

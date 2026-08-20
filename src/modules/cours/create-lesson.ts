@@ -32,12 +32,15 @@ export async function createLesson(
   const db = getDb();
 
   const [course] = await db
-    .select({ id: courses.id })
+    .select({ id: courses.id, status: courses.status })
     .from(courses)
     .where(and(eq(courses.id, parsed.data.courseId), eq(courses.teacherId, appUser.id)));
 
   if (!course) {
     return { ok: false, error: "not_found" };
+  }
+  if (course.status === "en_revue") {
+    return { ok: false, error: "locked_while_review" };
   }
 
   const [{ value: lessonCount }] = await db

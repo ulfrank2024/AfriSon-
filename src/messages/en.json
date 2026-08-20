@@ -283,15 +283,18 @@
         "students": "Students",
         "teachers": "Teachers",
         "countries": "Countries covered",
-        "pendingApplications": "Pending applications"
+        "pendingApplications": "Pending applications",
+        "coursesToReview": "Courses to review"
       },
       "applications": { "title": "Teacher applications", "description": "Queue of applications to review.", "viewAll": "View all applications" },
+      "courseReview": { "title": "Courses to review", "description": "Check the content and videos before publishing.", "viewAll": "View courses to review" },
       "subscriptions": { "title": "Subscriptions & payments", "description": "Coming soon — arrives with the Flutterwave payment module." },
       "events": { "title": "Events & partnerships", "description": "Coming soon — phase 2 of the roadmap." },
       "comingSoon": "Coming soon",
       "nav": {
         "overview": "Overview",
         "applications": "Teacher applications",
+        "courseReview": "Courses to review",
         "subscriptions": "Subscriptions & payments",
         "events": "Events & partnerships",
         "role": "Administrator",
@@ -328,20 +331,61 @@
       "en_attente_documents": "Awaiting documents"
     }
   },
+  "adminCourses": {
+    "title": "Course review",
+    "description": "Check the content and watch the videos before publishing a course to the catalogue.",
+    "empty": "No courses for this filter.",
+    "filterAll": "All",
+    "byTeacher": "by {name}",
+    "watchVideo": "Watch video",
+    "previousNotes": "Previous decision:",
+    "approve": "Publish course",
+    "reject": "Reject",
+    "noLessons": "This course doesn't have any lessons yet.",
+    "fields": {
+      "level": "Level",
+      "teachingLanguage": "Teaching language",
+      "lessons": "Lessons",
+      "notes": "Notes for the teacher",
+      "notesPlaceholder": "Explain what needs fixing if you reject the course (optional if you publish)."
+    },
+    "levels": {
+      "debutant": "Beginner",
+      "intermediaire": "Intermediate",
+      "avance": "Advanced"
+    },
+    "teachingLanguages": {
+      "fr": "French",
+      "en": "English"
+    },
+    "statuses": {
+      "brouillon": "Draft",
+      "en_revue": "In review",
+      "publie": "Published",
+      "rejete": "Rejected"
+    }
+  },
   "teacherCourses": {
     "back": "Back to dashboard",
     "title": "My courses",
     "newCourse": "Create a course",
     "empty": "You haven't created any courses yet.",
     "lessonCount": "{count, plural, =0 {No lessons} one {# lesson} other {# lessons}}",
-    "published": "Published",
-    "draft": "Draft",
-    "draftNote": "This course is a draft: it doesn't appear in the student catalogue yet. Publish it when it's ready.",
+    "draftNote": "This course is a draft: submit it for review when it's ready so it can appear in the student catalogue.",
     "lessons": "Lessons",
     "noLessons": "No lessons yet.",
     "addLesson": "Add a lesson",
-    "publish": "Publish",
+    "submitForReview": "Submit for review",
+    "resubmit": "Resubmit",
     "unpublish": "Unpublish",
+    "underReviewNote": "Awaiting review by the AfriSon team.",
+    "lockedWhileReview": "This course is under review: lessons can't be edited right now.",
+    "statuses": {
+      "brouillon": "Draft",
+      "en_revue": "In review",
+      "publie": "Published",
+      "rejete": "Rejected"
+    },
     "levels": {
       "debutant": "Beginner",
       "intermediaire": "Intermediate",

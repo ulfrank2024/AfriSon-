@@ -3,10 +3,14 @@ import {
   uuid,
   text,
   timestamp,
-  boolean,
   integer,
 } from "drizzle-orm/pg-core";
-import { courseLevelEnum, lessonTypeEnum, teachingLanguageEnum } from "./enums";
+import {
+  courseLevelEnum,
+  courseStatusEnum,
+  lessonTypeEnum,
+  teachingLanguageEnum,
+} from "./enums";
 import { users } from "./users";
 
 export const courses = pgTable("courses", {
@@ -18,7 +22,8 @@ export const courses = pgTable("courses", {
   specialty: text("specialty").notNull(),
   level: courseLevelEnum("level").notNull().default("debutant"),
   teachingLanguage: teachingLanguageEnum("teaching_language").notNull(),
-  isPublished: boolean("is_published").notNull().default(false),
+  status: courseStatusEnum("status").notNull().default("brouillon"),
+  adminNotes: text("admin_notes"),
   createdAt: timestamp("created_at", { withTimezone: true })
     .notNull()
     .defaultNow(),

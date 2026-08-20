@@ -19,11 +19,11 @@ export async function deleteLesson(formData: FormData) {
   const db = getDb();
 
   const [course] = await db
-    .select({ id: courses.id })
+    .select({ id: courses.id, status: courses.status })
     .from(courses)
     .where(and(eq(courses.id, courseId), eq(courses.teacherId, appUser.id)));
 
-  if (!course) return;
+  if (!course || course.status === "en_revue") return;
 
   await db.delete(lessons).where(and(eq(lessons.id, lessonId), eq(lessons.courseId, courseId)));
 

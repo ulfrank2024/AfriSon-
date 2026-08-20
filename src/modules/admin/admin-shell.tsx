@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import {
   LayoutDashboard,
   UserCheck,
+  Video,
   CreditCard,
   CalendarRange,
   Lock,
@@ -29,6 +30,7 @@ import { cn } from "@/lib/utils";
 const NAV_ITEMS = [
   { href: "/admin", key: "overview", icon: LayoutDashboard, enabled: true },
   { href: "/admin/candidatures", key: "applications", icon: UserCheck, enabled: true },
+  { href: "/admin/cours", key: "courseReview", icon: Video, enabled: true },
   { href: "/admin", key: "subscriptions", icon: CreditCard, enabled: false },
   { href: "/admin", key: "events", icon: CalendarRange, enabled: false },
 ] as const;

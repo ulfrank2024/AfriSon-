@@ -6,6 +6,7 @@ import {
   Globe,
   FileClock,
   UserCheck,
+  Video,
   CreditCard,
   CalendarRange,
   Lock,
@@ -33,6 +34,12 @@ export default async function AdminDashboardPage() {
       icon: FileClock,
       accent: "bg-primary/15 text-primary",
     },
+    {
+      key: "coursesToReview",
+      value: overview.coursesToReview,
+      icon: Video,
+      accent: "bg-chart-3/15 text-chart-3",
+    },
   ] as const;
 
   const today = new Date().toLocaleDateString(appUser?.interfaceLanguage === "en" ? "en-US" : "fr-FR", {
@@ -55,7 +62,7 @@ export default async function AdminDashboardPage() {
         </div>
       </Reveal>
 
-      <StaggerGroup className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4" staggerDelay={0.06}>
+      <StaggerGroup className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-5" staggerDelay={0.06}>
         {stats.map((stat) => (
           <StaggerItem key={stat.key}>
             <div className="rounded-xl border border-border bg-card p-4 transition-shadow hover:shadow-md">
@@ -85,6 +92,27 @@ export default async function AdminDashboardPage() {
               <p className="mt-1 flex-1 text-sm text-muted-foreground">{t("applications.description")}</p>
               <span className="mt-4 flex items-center gap-1 text-sm font-medium text-primary">
                 {t("applications.viewAll")}
+                <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
+              </span>
+            </div>
+          </Link>
+        </StaggerItem>
+
+        <StaggerItem>
+          <Link href="/admin/cours" className="group block h-full">
+            <div className="flex h-full flex-col rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
+              <div className="flex items-start justify-between">
+                <span className="flex size-10 items-center justify-center rounded-lg bg-chart-3/15 text-chart-3">
+                  <Video className="size-5" strokeWidth={2.25} />
+                </span>
+                {overview.coursesToReview > 0 && (
+                  <Badge variant="secondary">{overview.coursesToReview}</Badge>
+                )}
+              </div>
+              <p className="mt-4 font-semibold">{t("courseReview.title")}</p>
+              <p className="mt-1 flex-1 text-sm text-muted-foreground">{t("courseReview.description")}</p>
+              <span className="mt-4 flex items-center gap-1 text-sm font-medium text-primary">
+                {t("courseReview.viewAll")}
                 <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
               </span>
             </div>

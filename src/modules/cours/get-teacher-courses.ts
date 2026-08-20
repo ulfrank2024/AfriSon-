@@ -10,7 +10,7 @@ export async function getTeacherCourses(teacherId: string) {
       specialty: courses.specialty,
       level: courses.level,
       teachingLanguage: courses.teachingLanguage,
-      isPublished: courses.isPublished,
+      status: courses.status,
       createdAt: courses.createdAt,
       lessonCount: count(lessons.id),
     })
