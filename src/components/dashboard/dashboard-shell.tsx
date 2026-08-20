@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import { ArrowRight, Lock } from "lucide-react";
 import { UserButton } from "@clerk/nextjs";
 import { Link } from "@/i18n/navigation";
@@ -22,11 +23,13 @@ export function DashboardShell({
   badge,
   title,
   welcome,
+  bannerImage,
   cards,
 }: {
   badge: string;
   title: string;
   welcome: string;
+  bannerImage: { src: string; alt: string };
   cards: DashboardCard[];
 }) {
   return (
@@ -44,14 +47,27 @@ export function DashboardShell({
         </div>
       </header>
 
-      <div className="mx-auto max-w-5xl px-4 py-8 sm:px-8 sm:py-10">
-        <Reveal onView={false}>
-          <Badge variant="secondary">{badge}</Badge>
-          <h1 className="mt-3 text-2xl font-bold tracking-tight">{title}</h1>
-          <p className="mt-1 text-sm text-muted-foreground">{welcome}</p>
-        </Reveal>
+      <div className="relative h-40 w-full overflow-hidden sm:h-56">
+        <Image
+          src={bannerImage.src}
+          alt={bannerImage.alt}
+          fill
+          sizes="100vw"
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
+        <div className="absolute inset-0 flex items-end px-4 pb-5 sm:px-8 sm:pb-7">
+          <Reveal onView={false} className="mx-auto w-full max-w-5xl">
+            <Badge variant="secondary">{badge}</Badge>
+            <h1 className="mt-2 text-2xl font-bold tracking-tight text-white">{title}</h1>
+            <p className="mt-1 text-sm text-white/85">{welcome}</p>
+          </Reveal>
+        </div>
+      </div>
 
-        <StaggerGroup className="mt-8 grid gap-4 sm:grid-cols-2" staggerDelay={0.08}>
+      <div className="mx-auto max-w-5xl px-4 py-8 sm:px-8 sm:py-10">
+        <StaggerGroup className="grid gap-4 sm:grid-cols-2" staggerDelay={0.08}>
           {cards.map((card) =>
             card.href ? (
               <StaggerItem key={card.title}>

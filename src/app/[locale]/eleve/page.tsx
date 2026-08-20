@@ -12,6 +12,7 @@ export default async function EleveDashboardPage() {
       badge="Élève"
       title={t("title")}
       welcome={appUser ? `${t("welcome")} ${appUser.fullName}` : t("welcome")}
+      bannerImage={{ src: "/images/traditional-dance.jpg", alt: "" }}
       cards={[
         {
           title: t("courses.title"),

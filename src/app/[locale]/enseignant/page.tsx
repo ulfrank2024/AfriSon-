@@ -12,6 +12,7 @@ export default async function EnseignantDashboardPage() {
       badge="Enseignant"
       title={t("title")}
       welcome={appUser ? `${t("welcome")} ${appUser.fullName}` : t("welcome")}
+      bannerImage={{ src: "/images/teacher-tablet-guitar.jpg", alt: "" }}
       cards={[
         {
           title: t("courses.title"),
