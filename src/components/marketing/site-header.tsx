@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { Menu } from "lucide-react";
+import { Show, UserButton } from "@clerk/nextjs";
 import { Link } from "@/i18n/navigation";
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
@@ -19,6 +20,7 @@ import { LocaleSwitcher } from "./locale-switcher";
 import { LogoMark } from "./logo-mark";
 import { PatternStrip } from "./pattern-strip";
 import { cn } from "@/lib/utils";
+import { isClerkConfigured } from "@/modules/auth/config";
 
 const NAV_ITEMS = [
   { href: "/#instruments", labelKey: "instruments" },
@@ -80,12 +82,33 @@ export function SiteHeader() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <LocaleSwitcher />
-          <Link href="/login" className={buttonVariants({ variant: "ghost", size: "sm" })}>
-            {t("login")}
-          </Link>
-          <Link href="/signup" className={buttonVariants({ size: "sm" })}>
-            {t("signup")}
-          </Link>
+          {isClerkConfigured ? (
+            <>
+              <Show when="signed-out">
+                <Link href="/login" className={buttonVariants({ variant: "ghost", size: "sm" })}>
+                  {t("login")}
+                </Link>
+                <Link href="/signup" className={buttonVariants({ size: "sm" })}>
+                  {t("signup")}
+                </Link>
+              </Show>
+              <Show when="signed-in">
+                <Link href="/onboarding" className={buttonVariants({ variant: "ghost", size: "sm" })}>
+                  {t("dashboard")}
+                </Link>
+                <UserButton />
+              </Show>
+            </>
+          ) : (
+            <>
+              <Link href="/login" className={buttonVariants({ variant: "ghost", size: "sm" })}>
+                {t("login")}
+              </Link>
+              <Link href="/signup" className={buttonVariants({ size: "sm" })}>
+                {t("signup")}
+              </Link>
+            </>
+          )}
         </div>
 
         <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
@@ -122,18 +145,50 @@ export function SiteHeader() {
                 <span className="text-sm text-muted-foreground">{t("language")}</span>
                 <LocaleSwitcher />
               </div>
-              <SheetClose
-                nativeButton={false}
-                render={<Link href="/login" className={buttonVariants({ variant: "outline" })} />}
-              >
-                {t("login")}
-              </SheetClose>
-              <SheetClose
-                nativeButton={false}
-                render={<Link href="/signup" className={buttonVariants()} />}
-              >
-                {t("signup")}
-              </SheetClose>
+              {isClerkConfigured ? (
+                <>
+                  <Show when="signed-out">
+                    <SheetClose
+                      nativeButton={false}
+                      render={<Link href="/login" className={buttonVariants({ variant: "outline" })} />}
+                    >
+                      {t("login")}
+                    </SheetClose>
+                    <SheetClose
+                      nativeButton={false}
+                      render={<Link href="/signup" className={buttonVariants()} />}
+                    >
+                      {t("signup")}
+                    </SheetClose>
+                  </Show>
+                  <Show when="signed-in">
+                    <div className="flex items-center justify-between px-1">
+                      <SheetClose
+                        nativeButton={false}
+                        render={<Link href="/onboarding" className={buttonVariants({ variant: "outline", size: "sm" })} />}
+                      >
+                        {t("dashboard")}
+                      </SheetClose>
+                      <UserButton />
+                    </div>
+                  </Show>
+                </>
+              ) : (
+                <>
+                  <SheetClose
+                    nativeButton={false}
+                    render={<Link href="/login" className={buttonVariants({ variant: "outline" })} />}
+                  >
+                    {t("login")}
+                  </SheetClose>
+                  <SheetClose
+                    nativeButton={false}
+                    render={<Link href="/signup" className={buttonVariants()} />}
+                  >
+                    {t("signup")}
+                  </SheetClose>
+                </>
+              )}
             </SheetFooter>
           </SheetContent>
         </Sheet>
