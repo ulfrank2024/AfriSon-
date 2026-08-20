@@ -24,12 +24,14 @@ export function DashboardShell({
   title,
   welcome,
   bannerImage,
+  beforeCards,
   cards,
 }: {
   badge: string;
   title: string;
   welcome: string;
   bannerImage: { src: string; alt: string };
+  beforeCards?: ReactNode;
   cards: DashboardCard[];
 }) {
   return (
@@ -67,6 +69,7 @@ export function DashboardShell({
       </div>
 
       <div className="mx-auto max-w-5xl px-4 py-8 sm:px-8 sm:py-10">
+        {beforeCards}
         <StaggerGroup className="grid gap-4 sm:grid-cols-2" staggerDelay={0.08}>
           {cards.map((card) =>
             card.href ? (

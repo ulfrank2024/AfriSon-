@@ -7,6 +7,7 @@ import {
   FileClock,
   UserCheck,
   Video,
+  Megaphone,
   CreditCard,
   CalendarRange,
   Lock,
@@ -113,6 +114,22 @@ export default async function AdminDashboardPage() {
               <p className="mt-1 flex-1 text-sm text-muted-foreground">{t("courseReview.description")}</p>
               <span className="mt-4 flex items-center gap-1 text-sm font-medium text-primary">
                 {t("courseReview.viewAll")}
+                <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
+              </span>
+            </div>
+          </Link>
+        </StaggerItem>
+
+        <StaggerItem>
+          <Link href="/admin/annonces" className="group block h-full">
+            <div className="flex h-full flex-col rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
+              <span className="flex size-10 items-center justify-center rounded-lg bg-chart-5/15 text-chart-5">
+                <Megaphone className="size-5" strokeWidth={2.25} />
+              </span>
+              <p className="mt-4 font-semibold">{t("announcements.title")}</p>
+              <p className="mt-1 flex-1 text-sm text-muted-foreground">{t("announcements.description")}</p>
+              <span className="mt-4 flex items-center gap-1 text-sm font-medium text-primary">
+                {t("announcements.viewAll")}
                 <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
               </span>
             </div>

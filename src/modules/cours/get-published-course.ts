@@ -1,10 +1,10 @@
-import { eq, and, asc, avg, count } from "drizzle-orm";
+import { eq, and, asc, avg, count, inArray } from "drizzle-orm";
 import { getDb } from "@/db/client";
-import { courses, lessons, users, courseRatings, courseLikes } from "@/db/schema";
+import { courses, lessons, users, courseRatings, courseLikes, lessonProgress } from "@/db/schema";
 
 /** Fetches a course for student viewing — only if it's published. When
- * studentId is provided, also resolves that student's own rating/like
- * state so the UI can pre-fill the widgets. */
+ * studentId is provided, also resolves that student's own rating/like/
+ * lesson-progress state so the UI can pre-fill the widgets. */
 export async function getPublishedCourse(courseId: string, studentId?: string) {
   const db = getDb();
 
@@ -44,9 +44,33 @@ export async function getPublishedCourse(courseId: string, studentId?: string) {
       : Promise.resolve([]),
   ]);
 
+  const completedLessonIds =
+    studentId && courseLessons.length > 0
+      ? new Set(
+          (
+            await db
+              .select({ lessonId: lessonProgress.lessonId })
+              .from(lessonProgress)
+              .where(
+                and(
+                  eq(lessonProgress.studentId, studentId),
+                  inArray(
+                    lessonProgress.lessonId,
+                    courseLessons.map((l) => l.id),
+                  ),
+                ),
+              )
+          ).map((r) => r.lessonId),
+        )
+      : new Set<string>();
+
   return {
     course,
-    lessons: courseLessons,
+    lessons: courseLessons.map((lesson) => ({
+      ...lesson,
+      completed: completedLessonIds.has(lesson.id),
+    })),
+    completedCount: completedLessonIds.size,
     averageRating: ratingAgg.average ? Number(ratingAgg.average) : null,
     ratingCount: ratingAgg.count,
     likeCount: likeAgg.count,

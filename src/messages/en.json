@@ -264,7 +264,13 @@
       "courses": { "title": "My courses", "description": "Pick up your lessons where you left off." },
       "community": { "title": "Community & opportunities", "description": "Concerts, seminars, and exchanges with other students." },
       "referral": { "title": "Referral", "description": "Invite someone close and you both get a reward." },
-      "comingSoon": "Coming soon"
+      "comingSoon": "Coming soon",
+      "announcements": { "title": "Announcements" },
+      "progress": {
+        "title": "My progress",
+        "coursesStarted": "Courses started",
+        "lessonsCompleted": "Lessons completed"
+      }
     },
     "enseignant": {
       "title": "Teacher space",
@@ -274,7 +280,8 @@
       "earnings": { "title": "Earnings", "description": "Breakdown of your earnings and payout history." },
       "live": { "title": "Live sessions", "description": "Manage your live class slots." },
       "referral": { "title": "Invitation", "description": "Share your personal link and track sign-ups." },
-      "comingSoon": "Coming soon"
+      "comingSoon": "Coming soon",
+      "announcements": { "title": "Announcements" }
     },
     "admin": {
       "title": "Admin space",
@@ -288,6 +295,7 @@
       },
       "applications": { "title": "Teacher applications", "description": "Queue of applications to review.", "viewAll": "View all applications" },
       "courseReview": { "title": "Courses to review", "description": "Check the content and videos before publishing.", "viewAll": "View courses to review" },
+      "announcements": { "title": "Announcements", "description": "Post an announcement for students and/or teachers.", "viewAll": "Manage announcements" },
       "subscriptions": { "title": "Subscriptions & payments", "description": "Coming soon — arrives with the Flutterwave payment module." },
       "events": { "title": "Events & partnerships", "description": "Coming soon — phase 2 of the roadmap." },
       "comingSoon": "Coming soon",
@@ -295,6 +303,7 @@
         "overview": "Overview",
         "applications": "Teacher applications",
         "courseReview": "Courses to review",
+        "announcements": "Announcements",
         "subscriptions": "Subscriptions & payments",
         "events": "Events & partnerships",
         "role": "Administrator",
@@ -365,6 +374,34 @@
       "rejete": "Rejected"
     }
   },
+  "adminAnnouncements": {
+    "title": "Announcements",
+    "description": "Post announcements visible on the student and/or teacher dashboard.",
+    "empty": "No announcements yet.",
+    "published": "Published",
+    "unpublished": "Unpublished",
+    "publish": "Publish",
+    "unpublish": "Unpublish",
+    "delete": "Delete",
+    "create": {
+      "title": "Create an announcement",
+      "submit": "Publish announcement",
+      "error": "Something went wrong. Check the fields and try again."
+    },
+    "list": {
+      "title": "Existing announcements"
+    },
+    "fields": {
+      "title": "Title",
+      "body": "Message",
+      "audience": "Audience"
+    },
+    "audiences": {
+      "tous": "Students and teachers",
+      "eleve": "Students only",
+      "enseignant": "Teachers only"
+    }
+  },
   "teacherCourses": {
     "back": "Back to dashboard",
     "title": "My courses",
@@ -429,6 +466,7 @@
     "lessons": "Lessons",
     "noLessons": "This course doesn't have any lessons yet.",
     "watchLesson": "Watch lesson",
+    "progressCount": "{completed}/{total} completed",
     "rateThisCourse": "Rate this course",
     "yourRating": "Your rating: {rating}/5",
     "averageRating": "{average}/5 ({count, plural, =0 {no ratings} one {# rating} other {# ratings}})",

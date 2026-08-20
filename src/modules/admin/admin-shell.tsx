@@ -6,6 +6,7 @@ import {
   LayoutDashboard,
   UserCheck,
   Video,
+  Megaphone,
   CreditCard,
   CalendarRange,
   Lock,
@@ -31,6 +32,7 @@ const NAV_ITEMS = [
   { href: "/admin", key: "overview", icon: LayoutDashboard, enabled: true },
   { href: "/admin/candidatures", key: "applications", icon: UserCheck, enabled: true },
   { href: "/admin/cours", key: "courseReview", icon: Video, enabled: true },
+  { href: "/admin/annonces", key: "announcements", icon: Megaphone, enabled: true },
   { href: "/admin", key: "subscriptions", icon: CreditCard, enabled: false },
   { href: "/admin", key: "events", icon: CalendarRange, enabled: false },
 ] as const;

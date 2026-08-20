@@ -76,3 +76,9 @@ export const referralStatusEnum = pgEnum("referral_status", [
 ]);
 
 export const eventTypeEnum = pgEnum("event_type", ["concert", "seminaire"]);
+
+export const announcementAudienceEnum = pgEnum("announcement_audience", [
+  "tous",
+  "eleve",
+  "enseignant",
+]);

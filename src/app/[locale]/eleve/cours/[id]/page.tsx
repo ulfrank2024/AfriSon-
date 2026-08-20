@@ -7,6 +7,8 @@ import { requireAppUser } from "@/modules/auth/require-app-user";
 import { getPublishedCourse } from "@/modules/cours/get-published-course";
 import { CourseRating } from "@/modules/cours/course-rating";
 import { CourseLikeButton } from "@/modules/cours/course-like-button";
+import { CourseProgressBar } from "@/modules/cours/course-progress-bar";
+import { LessonProgressCheckbox } from "@/modules/cours/lesson-progress-checkbox";
 
 const LESSON_ICONS = { video: Video, exercice: Dumbbell, quiz: HelpCircle } as const;
 
@@ -30,7 +32,7 @@ export default async function StudentCourseDetailPage({
   if (!data) {
     notFound();
   }
-  const { course, lessons, averageRating, ratingCount, likeCount, myRating, isLiked } = data;
+  const { course, lessons, completedCount, averageRating, ratingCount, likeCount, myRating, isLiked } = data;
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-8 sm:py-10">
@@ -66,7 +68,20 @@ export default async function StudentCourseDetailPage({
         </div>
       </div>
 
-      <h2 className="mt-10 text-lg font-semibold">{t("lessons")}</h2>
+      <div className="mt-10 flex flex-wrap items-center justify-between gap-2">
+        <h2 className="text-lg font-semibold">{t("lessons")}</h2>
+        {lessons.length > 0 && (
+          <p className="text-xs text-muted-foreground">
+            {t("progressCount", { completed: completedCount, total: lessons.length })}
+          </p>
+        )}
+      </div>
+
+      {lessons.length > 0 && (
+        <div className="mt-3">
+          <CourseProgressBar completed={completedCount} total={lessons.length} />
+        </div>
+      )}
 
       {lessons.length === 0 ? (
         <p className="mt-2 text-sm text-muted-foreground">{t("noLessons")}</p>
@@ -80,6 +95,7 @@ export default async function StudentCourseDetailPage({
                 key={lesson.id}
                 className="flex items-start gap-3 rounded-lg border border-border bg-card p-3"
               >
+                <LessonProgressCheckbox lessonId={lesson.id} courseId={course.id} completed={lesson.completed} />
                 <span className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary">
                   <Icon className="size-3.5" />
                 </span>

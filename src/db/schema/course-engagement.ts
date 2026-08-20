@@ -1,5 +1,5 @@
 import { pgTable, uuid, integer, timestamp, uniqueIndex } from "drizzle-orm/pg-core";
-import { courses } from "./courses";
+import { courses, lessons } from "./courses";
 import { users } from "./users";
 
 /** One rating (1-5) per student per course — re-rating updates the row. */
@@ -34,4 +34,20 @@ export const courseLikes = pgTable(
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
   },
   (table) => [uniqueIndex("course_likes_course_student_idx").on(table.courseId, table.studentId)],
+);
+
+/** Row presence = lesson completed by that student. Toggled by inserting/deleting. */
+export const lessonProgress = pgTable(
+  "lesson_progress",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    lessonId: uuid("lesson_id")
+      .notNull()
+      .references(() => lessons.id, { onDelete: "cascade" }),
+    studentId: uuid("student_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    completedAt: timestamp("completed_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (table) => [uniqueIndex("lesson_progress_lesson_student_idx").on(table.lessonId, table.studentId)],
 );

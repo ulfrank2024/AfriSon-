@@ -9,3 +9,4 @@ export * from "./referrals";
 export * from "./live-sessions";
 export * from "./events";
 export * from "./partner-institutions";
+export * from "./announcements";

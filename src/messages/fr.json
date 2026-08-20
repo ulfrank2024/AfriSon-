@@ -264,7 +264,13 @@
       "courses": { "title": "Mes cours", "description": "Reprends tes leçons là où tu les as laissées." },
       "community": { "title": "Communauté & opportunités", "description": "Concerts, séminaires et échanges entre élèves." },
       "referral": { "title": "Parrainage", "description": "Invite un proche et gagnez tous les deux une récompense." },
-      "comingSoon": "Bientôt disponible"
+      "comingSoon": "Bientôt disponible",
+      "announcements": { "title": "Annonces" },
+      "progress": {
+        "title": "Ma progression",
+        "coursesStarted": "Cours commencés",
+        "lessonsCompleted": "Leçons terminées"
+      }
     },
     "enseignant": {
       "title": "Espace enseignant",
@@ -274,7 +280,8 @@
       "earnings": { "title": "Revenus", "description": "Détail de tes revenus et historique des versements." },
       "live": { "title": "Sessions live", "description": "Gère tes créneaux de cours en direct." },
       "referral": { "title": "Invitation", "description": "Partage ton lien personnel et suis les inscriptions." },
-      "comingSoon": "Bientôt disponible"
+      "comingSoon": "Bientôt disponible",
+      "announcements": { "title": "Annonces" }
     },
     "admin": {
       "title": "Espace administrateur",
@@ -288,6 +295,7 @@
       },
       "applications": { "title": "Candidatures enseignant", "description": "File de candidatures à traiter.", "viewAll": "Voir toutes les candidatures" },
       "courseReview": { "title": "Cours à valider", "description": "Vérifie le contenu et les vidéos avant publication.", "viewAll": "Voir les cours à valider" },
+      "announcements": { "title": "Annonces", "description": "Publie une annonce pour les élèves et/ou les enseignants.", "viewAll": "Gérer les annonces" },
       "subscriptions": { "title": "Abonnements & paiements", "description": "Bientôt disponible — arrive avec le module de paiement Flutterwave." },
       "events": { "title": "Événements & partenariats", "description": "Bientôt disponible — phase 2 de la feuille de route." },
       "comingSoon": "Bientôt disponible",
@@ -295,6 +303,7 @@
         "overview": "Vue d'ensemble",
         "applications": "Candidatures enseignant",
         "courseReview": "Cours à valider",
+        "announcements": "Annonces",
         "subscriptions": "Abonnements & paiements",
         "events": "Événements & partenariats",
         "role": "Administrateur",
@@ -365,6 +374,34 @@
       "rejete": "Rejeté"
     }
   },
+  "adminAnnouncements": {
+    "title": "Annonces",
+    "description": "Publie des annonces visibles sur le tableau de bord des élèves et/ou des enseignants.",
+    "empty": "Aucune annonce pour l'instant.",
+    "published": "Publiée",
+    "unpublished": "Dépubliée",
+    "publish": "Publier",
+    "unpublish": "Dépublier",
+    "delete": "Supprimer",
+    "create": {
+      "title": "Créer une annonce",
+      "submit": "Publier l'annonce",
+      "error": "Une erreur est survenue. Vérifie les champs et réessaie."
+    },
+    "list": {
+      "title": "Annonces existantes"
+    },
+    "fields": {
+      "title": "Titre",
+      "body": "Message",
+      "audience": "Destinataires"
+    },
+    "audiences": {
+      "tous": "Élèves et enseignants",
+      "eleve": "Élèves uniquement",
+      "enseignant": "Enseignants uniquement"
+    }
+  },
   "teacherCourses": {
     "back": "Retour au tableau de bord",
     "title": "Mes cours",
@@ -429,6 +466,7 @@
     "lessons": "Leçons",
     "noLessons": "Ce cours n'a pas encore de leçon.",
     "watchLesson": "Regarder la leçon",
+    "progressCount": "{completed}/{total} terminées",
     "rateThisCourse": "Note ce cours",
     "yourRating": "Ta note : {rating}/5",
     "averageRating": "{average}/5 ({count, plural, =0 {aucune note} one {# note} other {# notes}})",

@@ -2,10 +2,14 @@ import { getTranslations } from "next-intl/server";
 import { BookOpen, Users, Wallet, Video, Gift } from "lucide-react";
 import { DashboardShell } from "@/components/dashboard/dashboard-shell";
 import { requireAppUser } from "@/modules/auth/require-app-user";
+import { getAnnouncementsForAudience } from "@/modules/annonces/get-announcements-for-audience";
+import { AnnouncementFeed } from "@/modules/annonces/announcement-feed";
 
 export default async function EnseignantDashboardPage() {
   const appUser = await requireAppUser("enseignant");
   const t = await getTranslations("dashboard.enseignant");
+  const locale = appUser?.interfaceLanguage === "en" ? "en-US" : "fr-FR";
+  const announcements = await getAnnouncementsForAudience("enseignant");
 
   return (
     <DashboardShell
@@ -13,6 +17,14 @@ export default async function EnseignantDashboardPage() {
       title={t("title")}
       welcome={appUser ? `${t("welcome")} ${appUser.fullName}` : t("welcome")}
       bannerImage={{ src: "/images/teacher-tablet-guitar.jpg", alt: "" }}
+      beforeCards={
+        announcements.length > 0 ? (
+          <div className="mb-8">
+            <h2 className="mb-3 text-sm font-semibold">{t("announcements.title")}</h2>
+            <AnnouncementFeed announcements={announcements} locale={locale} emptyLabel="" />
+          </div>
+        ) : undefined
+      }
       cards={[
         {
           title: t("courses.title"),
