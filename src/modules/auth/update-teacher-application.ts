@@ -7,6 +7,7 @@ import { getDb } from "@/db/client";
 import { teacherApplications, users } from "@/db/schema";
 import { requireAppUser } from "./require-app-user";
 import { APPLICATION_STATUSES, type ApplicationStatus } from "./types";
+import { notifyApplicationStatusChange } from "@/modules/email/notify-application-status";
 
 function isApplicationStatus(value: FormDataEntryValue | null): value is ApplicationStatus {
   return typeof value === "string" && (APPLICATION_STATUSES as readonly string[]).includes(value);
@@ -31,6 +32,11 @@ export async function updateTeacherApplication(formData: FormData) {
 
   const db = getDb();
 
+  const [existing] = await db
+    .select({ status: teacherApplications.status })
+    .from(teacherApplications)
+    .where(eq(teacherApplications.id, id));
+
   const [application] = await db
     .update(teacherApplications)
     .set({
@@ -46,6 +52,14 @@ export async function updateTeacherApplication(formData: FormData) {
       .update(users)
       .set({ role: "enseignant" })
       .where(and(eq(users.email, application.email), eq(users.role, "eleve")));
+  }
+
+  if (application && existing && existing.status !== status) {
+    await notifyApplicationStatusChange({
+      email: application.email,
+      fullName: application.fullName,
+      status,
+    });
   }
 
   revalidatePath("/admin/candidatures");
