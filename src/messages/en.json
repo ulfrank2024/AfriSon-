@@ -467,6 +467,11 @@
     "emptyCatalogueHint": "Teachers are preparing their first courses. Check back very soon!",
     "resetFilters": "Reset filters",
     "languageFilterLabel": "Teaching language",
+    "stats": {
+      "courses": "Courses available",
+      "teachers": "Teachers",
+      "lessons": "Lessons available"
+    },
     "levelFilterLabel": "Level",
     "view": "View course",
     "byTeacher": "by {name}",

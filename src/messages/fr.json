@@ -467,6 +467,11 @@
     "emptyCatalogueHint": "Les enseignants préparent leurs premiers cours. Reviens très vite !",
     "resetFilters": "Réinitialiser les filtres",
     "languageFilterLabel": "Langue d'enseignement",
+    "stats": {
+      "courses": "Cours disponibles",
+      "teachers": "Enseignants",
+      "lessons": "Leçons disponibles"
+    },
     "levelFilterLabel": "Niveau",
     "view": "Voir le cours",
     "byTeacher": "par {name}",

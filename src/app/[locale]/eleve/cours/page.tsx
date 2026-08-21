@@ -1,9 +1,11 @@
 import { getTranslations } from "next-intl/server";
-import { ArrowLeft, ArrowRight, BookOpen, Music, Sparkles, Star, X } from "lucide-react";
+import Image from "next/image";
+import { ArrowLeft, ArrowRight, BookOpen, GraduationCap, Layers, Music, Sparkles, Star, X } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/badge";
 import { requireAppUser } from "@/modules/auth/require-app-user";
 import { getCourseCatalogue } from "@/modules/cours/get-course-catalogue";
+import { getCourseCatalogueStats } from "@/modules/cours/get-course-catalogue-stats";
 import { COURSE_LEVELS, type CourseLevel } from "@/modules/cours/types";
 import { cn } from "@/lib/utils";
 
@@ -52,7 +54,10 @@ export default async function StudentCataloguePage({
   const teachingLanguage = isTeachingLanguage(langParam) ? langParam : undefined;
   const hasActiveFilters = Boolean(level || teachingLanguage);
 
-  const catalogue = await getCourseCatalogue({ level, teachingLanguage });
+  const [catalogue, stats] = await Promise.all([
+    getCourseCatalogue({ level, teachingLanguage }),
+    getCourseCatalogueStats(),
+  ]);
 
   function filterHref(next: { level?: CourseLevel; lang?: "fr" | "en" }) {
     const query = new URLSearchParams();
@@ -62,27 +67,63 @@ export default async function StudentCataloguePage({
     return `/eleve/cours${qs ? `?${qs}` : ""}`;
   }
 
-  return (
-    <div className="mx-auto max-w-[1600px] px-4 py-8 sm:px-8 sm:py-10 lg:px-12">
-      <Link
-        href="/eleve"
-        className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
-      >
-        <ArrowLeft className="size-4" />
-        {t("back")}
-      </Link>
+  const statItems = [
+    { icon: BookOpen, value: stats.totalCourses, label: t("stats.courses") },
+    { icon: GraduationCap, value: stats.totalTeachers, label: t("stats.teachers") },
+    { icon: Layers, value: stats.totalLessons, label: t("stats.lessons") },
+  ];
 
-      <div className="mt-6 flex items-center gap-3">
-        <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-          <BookOpen className="size-5" strokeWidth={2.25} />
-        </span>
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight">{t("title")}</h1>
-          <p className="mt-0.5 text-sm text-muted-foreground">{t("description")}</p>
+  return (
+    <div>
+      <div className="mx-auto max-w-[1600px] px-4 pt-8 sm:px-8 lg:px-12">
+        <Link
+          href="/eleve"
+          className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+        >
+          <ArrowLeft className="size-4" />
+          {t("back")}
+        </Link>
+      </div>
+
+      <div className="relative mt-6 h-48 w-full overflow-hidden sm:h-60">
+        <Image
+          src="/images/stage-instruments.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/10" />
+        <div className="absolute inset-0 flex items-end px-4 pb-5 sm:px-8 sm:pb-7 lg:px-12">
+          <div className="mx-auto flex w-full max-w-[1600px] flex-wrap items-end justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-white/15 text-white backdrop-blur-sm">
+                <BookOpen className="size-5" strokeWidth={2.25} />
+              </span>
+              <div>
+                <h1 className="text-2xl font-bold tracking-tight text-white">{t("title")}</h1>
+                <p className="mt-0.5 text-sm text-white/85">{t("description")}</p>
+              </div>
+            </div>
+
+            <div className="flex items-stretch divide-x divide-white/20 rounded-xl border border-white/25 bg-black/25 backdrop-blur-sm">
+              {statItems.map((stat) => (
+                <div key={stat.label} className="flex items-center gap-2 px-3.5 py-2.5 sm:px-4 sm:py-3">
+                  <stat.icon className="size-4 shrink-0 text-white/80" strokeWidth={2} />
+                  <div>
+                    <p className="text-lg font-bold tabular-nums text-white sm:text-xl">{stat.value}</p>
+                    <p className="text-[11px] whitespace-nowrap text-white/80">{stat.label}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="mt-8 lg:grid lg:grid-cols-[260px_1fr] lg:items-start lg:gap-8">
+      <div className="mx-auto max-w-[1600px] px-4 py-8 sm:px-8 sm:py-10 lg:px-12">
+        <div className="lg:grid lg:grid-cols-[260px_1fr] lg:items-start lg:gap-8">
         <aside className="space-y-5 rounded-xl border border-border bg-card/50 p-4 sm:p-5 lg:sticky lg:top-8">
           <div>
             <p className="mb-2 text-xs font-semibold tracking-wide text-muted-foreground uppercase">
@@ -190,6 +231,7 @@ export default async function StudentCataloguePage({
             ))}
           </div>
         )}
+        </div>
       </div>
     </div>
   );
