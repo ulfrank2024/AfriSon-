@@ -28,9 +28,17 @@ export default async function AdminAnnouncementsPage() {
           {list.map((announcement) => (
             <li key={announcement.id} className="rounded-xl border border-border bg-card p-4">
               <div className="flex flex-wrap items-start justify-between gap-2">
-                <div>
-                  <p className="font-medium">{announcement.title}</p>
-                  <p className="mt-1 text-sm text-muted-foreground">{announcement.body}</p>
+                <div className="flex items-start gap-3">
+                  {announcement.imageUrl && (
+                    <span className="size-14 shrink-0 overflow-hidden rounded-lg bg-muted">
+                      {/* eslint-disable-next-line @next/next/no-img-element -- arbitrary uploaded/external URL, not an optimizable static asset */}
+                      <img src={announcement.imageUrl} alt="" className="size-full object-cover" />
+                    </span>
+                  )}
+                  <div>
+                    <p className="font-medium">{announcement.title}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">{announcement.body}</p>
+                  </div>
                 </div>
                 <div className="flex items-center gap-2">
                   <Badge variant="outline">{t(`audiences.${announcement.audience}`)}</Badge>

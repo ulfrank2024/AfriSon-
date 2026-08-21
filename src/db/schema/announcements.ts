@@ -9,6 +9,7 @@ export const announcements = pgTable("announcements", {
     .references(() => users.id, { onDelete: "cascade" }),
   title: text("title").notNull(),
   body: text("body").notNull(),
+  imageUrl: text("image_url"),
   audience: announcementAudienceEnum("audience").notNull().default("tous"),
   isPublished: boolean("is_published").notNull().default(true),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),

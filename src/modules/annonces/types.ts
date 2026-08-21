@@ -6,6 +6,7 @@ export type Announcement = {
   authorId: string;
   title: string;
   body: string;
+  imageUrl: string | null;
   audience: AnnouncementAudience;
   isPublished: boolean;
   createdAt: Date;

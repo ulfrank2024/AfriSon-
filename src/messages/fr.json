@@ -394,7 +394,12 @@
     "fields": {
       "title": "Titre",
       "body": "Message",
-      "audience": "Destinataires"
+      "audience": "Destinataires",
+      "image": "Image (optionnelle)",
+      "imageUpload": "Depuis mon ordinateur",
+      "imageLink": "Depuis un lien",
+      "imageHint": "JPEG, PNG, WebP ou GIF, 5 Mo maximum.",
+      "imageNoPreview": "L'aperçu s'affichera une fois le lien renseigné."
     },
     "audiences": {
       "tous": "Élèves et enseignants",

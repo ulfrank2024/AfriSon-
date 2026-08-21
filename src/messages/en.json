@@ -394,7 +394,12 @@
     "fields": {
       "title": "Title",
       "body": "Message",
-      "audience": "Audience"
+      "audience": "Audience",
+      "image": "Image (optional)",
+      "imageUpload": "From my computer",
+      "imageLink": "From a link",
+      "imageHint": "JPEG, PNG, WebP or GIF, 5 MB max.",
+      "imageNoPreview": "The preview will appear once the link is filled in."
     },
     "audiences": {
       "tous": "Students and teachers",
