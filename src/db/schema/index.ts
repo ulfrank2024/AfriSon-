@@ -4,6 +4,7 @@ export * from "./teacher-applications";
 export * from "./courses";
 export * from "./course-engagement";
 export * from "./subscriptions";
+export * from "./subscription-plans";
 export * from "./payments";
 export * from "./referrals";
 export * from "./live-sessions";

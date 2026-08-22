@@ -83,7 +83,7 @@ export default async function EleveDashboardPage() {
           description: t("subscription.description"),
           icon: <CreditCard className="size-5" strokeWidth={2.25} />,
           accent: "bg-chart-2/15 text-chart-2",
-          comingSoonLabel: t("comingSoon"),
+          href: "/eleve/abonnement",
         },
         {
           title: t("community.title"),

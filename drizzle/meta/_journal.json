@@ -50,6 +50,13 @@
       "when": 1787273383205,
       "tag": "0006_powerful_ikaris",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1787330613982,
+      "tag": "0007_flippant_praxagora",
+      "breakpoints": true
     }
   ]
 }

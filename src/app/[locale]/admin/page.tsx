@@ -137,17 +137,19 @@ export default async function AdminDashboardPage() {
         </StaggerItem>
 
         <StaggerItem>
-          <div className="flex h-full flex-col rounded-xl border border-dashed border-border bg-card/50 p-5">
-            <span className="flex size-10 items-center justify-center rounded-lg bg-muted text-muted-foreground">
-              <CreditCard className="size-5" strokeWidth={2.25} />
-            </span>
-            <p className="mt-4 font-semibold text-muted-foreground">{t("subscriptions.title")}</p>
-            <p className="mt-1 flex-1 text-sm text-muted-foreground">{t("subscriptions.description")}</p>
-            <span className="mt-4 flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
-              <Lock className="size-3.5" />
-              {t("comingSoon")}
-            </span>
-          </div>
+          <Link href="/admin/abonnements" className="group block h-full">
+            <div className="flex h-full flex-col rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
+              <span className="flex size-10 items-center justify-center rounded-lg bg-chart-2/15 text-chart-2">
+                <CreditCard className="size-5" strokeWidth={2.25} />
+              </span>
+              <p className="mt-4 font-semibold">{t("subscriptions.title")}</p>
+              <p className="mt-1 flex-1 text-sm text-muted-foreground">{t("subscriptions.description")}</p>
+              <span className="mt-4 flex items-center gap-1 text-sm font-medium text-primary">
+                {t("subscriptions.viewAll")}
+                <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
+              </span>
+            </div>
+          </Link>
         </StaggerItem>
 
         <StaggerItem>

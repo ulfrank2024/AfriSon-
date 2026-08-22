@@ -296,7 +296,7 @@
       "applications": { "title": "Teacher applications", "description": "Queue of applications to review.", "viewAll": "View all applications" },
       "courseReview": { "title": "Courses to review", "description": "Check the content and videos before publishing.", "viewAll": "View courses to review" },
       "announcements": { "title": "Announcements", "description": "Post an announcement for students and/or teachers.", "viewAll": "Manage announcements" },
-      "subscriptions": { "title": "Subscriptions & payments", "description": "Coming soon — arrives with the Flutterwave payment module." },
+      "subscriptions": { "title": "Subscriptions & payments", "description": "Configure subscription tiers and pricing.", "viewAll": "Manage subscriptions" },
       "events": { "title": "Events & partnerships", "description": "Coming soon — phase 2 of the roadmap." },
       "comingSoon": "Coming soon",
       "nav": {
@@ -405,6 +405,56 @@
       "tous": "Students and teachers",
       "eleve": "Students only",
       "enseignant": "Teachers only"
+    }
+  },
+  "adminSubscriptions": {
+    "title": "Subscriptions & payments",
+    "description": "Set the price for each tier. A tier priced at 0 or marked inactive won't appear in the student catalogue.",
+    "paymentNotice": "Mobile Money payment (Flutterwave) isn't wired up yet: students see the prices but can't pay yet.",
+    "save": "Save",
+    "tiers": {
+      "decouverte": "Discovery",
+      "standard": "Standard",
+      "premium": "Premium"
+    },
+    "tierDescriptions": {
+      "decouverte": "Limited access to get started, selected courses for beginners.",
+      "standard": "Full access to the course catalogue.",
+      "premium": "Full access, with live sessions included."
+    },
+    "fields": {
+      "price": "Price",
+      "perMonth": "/ month",
+      "liveIncluded": "Live sessions included",
+      "isActive": "Visible in the student catalogue"
+    }
+  },
+  "studentSubscription": {
+    "back": "Back to dashboard",
+    "title": "My subscription",
+    "description": "Choose the plan that suits you.",
+    "currentPlan": "Current plan: {tier}",
+    "noPlans": "Subscriptions are coming soon",
+    "noPlansHint": "The team is finalizing the plans and pricing. Check back very soon!",
+    "perMonth": "/ month",
+    "liveIncluded": "Live sessions included",
+    "subscribe": "Subscribe",
+    "paymentComingSoon": "Mobile Money payment coming soon",
+    "tiers": {
+      "decouverte": "Discovery",
+      "standard": "Standard",
+      "premium": "Premium"
+    },
+    "tierDescriptions": {
+      "decouverte": "Limited access to get started, selected courses for beginners.",
+      "standard": "Full access to the course catalogue.",
+      "premium": "Full access, with live sessions included."
+    },
+    "statuses": {
+      "active": "Active",
+      "en_attente": "Pending",
+      "expiree": "Expired",
+      "annulee": "Cancelled"
     }
   },
   "teacherCourses": {

@@ -33,7 +33,7 @@ const NAV_ITEMS = [
   { href: "/admin/candidatures", key: "applications", icon: UserCheck, enabled: true },
   { href: "/admin/cours", key: "courseReview", icon: Video, enabled: true },
   { href: "/admin/annonces", key: "announcements", icon: Megaphone, enabled: true },
-  { href: "/admin", key: "subscriptions", icon: CreditCard, enabled: false },
+  { href: "/admin/abonnements", key: "subscriptions", icon: CreditCard, enabled: true },
   { href: "/admin", key: "events", icon: CalendarRange, enabled: false },
 ] as const;
 

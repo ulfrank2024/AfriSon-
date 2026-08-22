@@ -296,7 +296,7 @@
       "applications": { "title": "Candidatures enseignant", "description": "File de candidatures à traiter.", "viewAll": "Voir toutes les candidatures" },
       "courseReview": { "title": "Cours à valider", "description": "Vérifie le contenu et les vidéos avant publication.", "viewAll": "Voir les cours à valider" },
       "announcements": { "title": "Annonces", "description": "Publie une annonce pour les élèves et/ou les enseignants.", "viewAll": "Gérer les annonces" },
-      "subscriptions": { "title": "Abonnements & paiements", "description": "Bientôt disponible — arrive avec le module de paiement Flutterwave." },
+      "subscriptions": { "title": "Abonnements & paiements", "description": "Configure les paliers et les prix des abonnements.", "viewAll": "Gérer les abonnements" },
       "events": { "title": "Événements & partenariats", "description": "Bientôt disponible — phase 2 de la feuille de route." },
       "comingSoon": "Bientôt disponible",
       "nav": {
@@ -405,6 +405,56 @@
       "tous": "Élèves et enseignants",
       "eleve": "Élèves uniquement",
       "enseignant": "Enseignants uniquement"
+    }
+  },
+  "adminSubscriptions": {
+    "title": "Abonnements & paiements",
+    "description": "Définis le prix de chaque palier. Un palier avec un prix à 0 ou marqué inactif n'apparaît pas dans le catalogue de l'élève.",
+    "paymentNotice": "Le paiement Mobile Money (Flutterwave) n'est pas encore branché : les élèves voient les prix mais ne peuvent pas encore payer.",
+    "save": "Enregistrer",
+    "tiers": {
+      "decouverte": "Découverte",
+      "standard": "Standard",
+      "premium": "Premium"
+    },
+    "tierDescriptions": {
+      "decouverte": "Accès limité pour débuter, cours choisis pour débutants.",
+      "standard": "Accès complet au catalogue de cours.",
+      "premium": "Accès complet, avec sessions live incluses."
+    },
+    "fields": {
+      "price": "Prix",
+      "perMonth": "/ mois",
+      "liveIncluded": "Sessions live incluses",
+      "isActive": "Visible dans le catalogue élève"
+    }
+  },
+  "studentSubscription": {
+    "back": "Retour au tableau de bord",
+    "title": "Mon abonnement",
+    "description": "Choisis la formule qui te convient.",
+    "currentPlan": "Formule actuelle : {tier}",
+    "noPlans": "Les abonnements arrivent bientôt",
+    "noPlansHint": "L'équipe finalise les formules et les tarifs. Reviens très vite !",
+    "perMonth": "/ mois",
+    "liveIncluded": "Sessions live incluses",
+    "subscribe": "S'abonner",
+    "paymentComingSoon": "Paiement Mobile Money bientôt disponible",
+    "tiers": {
+      "decouverte": "Découverte",
+      "standard": "Standard",
+      "premium": "Premium"
+    },
+    "tierDescriptions": {
+      "decouverte": "Accès limité pour débuter, cours choisis pour débutants.",
+      "standard": "Accès complet au catalogue de cours.",
+      "premium": "Accès complet, avec sessions live incluses."
+    },
+    "statuses": {
+      "active": "Actif",
+      "en_attente": "En attente",
+      "expiree": "Expiré",
+      "annulee": "Annulé"
     }
   },
   "teacherCourses": {
